@@ -12,8 +12,6 @@ import me.creeper.creepermodtest.handlers.DetonatorHeldHandler;
 import me.creeper.creepermodtest.handlers.KeybindingsHandler;
 import me.creeper.creepermodtest.items.RegisterItems;
 import me.creeper.creepermodtest.recipes.RegisterRecipes;
-import me.creeper.creepermodtest.renderers.CloudRenderer;
-import me.creeper.creepermodtest.renderers.Test2Renderer;
 import me.creeper.creepermodtest.renderers.TestRenderer;
 import me.creeper.creepermodtest.utils.Counter;
 import net.minecraft.block.Block;
@@ -101,8 +99,6 @@ public class ExampleMod {
 
 
         MinecraftForge.EVENT_BUS.register(new TestRenderer());
-        MinecraftForge.EVENT_BUS.register(new CloudRenderer());
-        MinecraftForge.EVENT_BUS.register(new Test2Renderer());
 
         if (event.getSide().isClient()) {
             registerAllKeybindings();
