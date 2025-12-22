@@ -1,0 +1,4 @@
+# Ignores
+code/.gradle/
+code/.idea/
+code/build/

@@ -1,0 +1,52 @@
+####################
+# Items            #
+####################
+item.itemTest.name=Test
+item.itemCheese.name=Cheese
+item.itemGrilledCheese.name=Grilled Cheese
+item.itemMallirusGem.name=Mallirus Gem
+item.diamondHammer.name=Diamond Hammer
+item.stoneHammer.name=Stone Hammer
+item.itemIronPlate.name=Iron Plate
+item.ironHammer.name=Iron Hammer
+item.itemDiamondPlate.name=Diamond Plate
+item.itemDetonator.name=Detonator
+
+
+
+####################
+# Blocks           #
+####################
+tile.blockTable.name=Table Block
+tile.blockMallirusOre.name=Mallirus Ore
+tile.blockBlinker.name=Blinker Block
+
+
+
+####################
+# Commands         #
+####################
+#testtest
+commands.testtest.usage=/testtest <playername|none>
+commands.testtest.success=%s has been damaged successfully
+commands.testtest.playerNotFound=That player was not found
+#tutorial
+
+
+
+
+####################
+# Tabs             #
+####################
+itemGroup.tabCreepermodtest=Creeper test mod Tab
+
+
+
+####################
+# Keybindings      #
+####################
+key.creepermodtest.toggleTestRenderer=Toggle TestRenderer
+key.categories.creepermodtest=CreeperModTest Keybindings
+
+
+

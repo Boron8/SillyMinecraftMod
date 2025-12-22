@@ -1,0 +1,16 @@
+[
+{
+  "modid": "creepermodtest",
+  "name": "Creeper test mod",
+  "description": "My (Creeper9555's) mod",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Creeper9555"],
+  "credits": "Creeper9555",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

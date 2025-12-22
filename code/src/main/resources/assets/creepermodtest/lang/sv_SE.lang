@@ -1,0 +1,35 @@
+####################
+# Items            #
+####################
+item.itemTest.name=Test
+item.itemCheese.name=Ost
+item.itemGrilledCheese.name=Grillad Ost
+
+
+
+####################
+# Blocks           #
+####################
+tile.blockTable.name=Bord Block
+tile.blockMallirusOre.name=Mallirus-Malm
+tile.blockBlinker.name=Blinkare Block
+item.itemMallirusGem.name=Mallirus Pärla
+
+
+
+####################
+# Commands         #
+####################
+#testtest
+commands.testtest.usage=/help <playername|none>
+commands.testtest.success=%s har blivit skadad utan problem
+commands.testtest.playerNotFound=Den spelaren hittades inte
+
+
+
+####################
+# Tabs             #
+####################
+itemGroup.tabCreepermodtest=Creeper test mod Tab
+
+
