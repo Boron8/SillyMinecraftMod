@@ -34,8 +34,15 @@ import static me.creeper.creepermodtest.keyBindings.RegisterKeybindings.register
 @Mod(modid = ExampleMod.MODID, version = ExampleMod.VERSION)
 public class ExampleMod {
 
-    public static final String MODID = "creepermodtest";
-    public static final String VERSION = "0.1";
+    // DEV     = Development
+    // ALPHA   = Alpha
+    // BETA    = Beta
+    // PRE     = Pre Release
+    // RELEASE = Release
+    public static final String RELEASE_TYPE    = "DEV";
+    public static final String RELEASE_VERSION = "1";
+    public static final String MODID           = "creepermodtest";
+    public static final String VERSION         = "0.0.1-" + RELEASE_TYPE + "-" + RELEASE_VERSION;
 
     public static boolean debug_print;
     public static File configFile;
