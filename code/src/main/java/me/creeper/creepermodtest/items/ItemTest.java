@@ -1,8 +1,6 @@
 package me.creeper.creepermodtest.items;
 
 import me.creeper.creepermodtest.ExampleMod;
-import me.creeper.creepermodtest.renderers.CloudRenderer;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

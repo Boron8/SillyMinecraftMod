@@ -31,7 +31,8 @@ commands.testtest.usage=/testtest <playername|none>
 commands.testtest.success=%s has been damaged successfully
 commands.testtest.playerNotFound=That player was not found
 #tutorial
-
+#version
+command.version.usage=/version
 
 
 

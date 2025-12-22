@@ -12,10 +12,15 @@ public class RegisterCommands {
             manager.registerCommand(new CommandTutorial());
         }
 
+        public static void registerCommandVersion(ServerCommandManager manager) {
+            manager.registerCommand(new CommandVersion());
+        }
+
 
         public static void registerAllCommands(ServerCommandManager manager) {
             registerCommandTestTest(manager);
             registerCommandTutorial(manager);
+            registerCommandVersion(manager);
         }
     }
 }

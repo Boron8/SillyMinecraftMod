@@ -30,6 +30,9 @@ item.itemMallirusGem.name=Mallirus Pärla
 commands.testtest.usage=/help <playername|none>
 commands.testtest.success=%s har blivit skadad utan problem
 commands.testtest.playerNotFound=Den spelaren hittades inte
+#tutorial
+#version
+command.version.usage=/version
 
 
 
