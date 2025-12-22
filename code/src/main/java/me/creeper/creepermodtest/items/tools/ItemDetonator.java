@@ -2,14 +2,11 @@ package me.creeper.creepermodtest.items.tools;
 
 import me.creeper.creepermodtest.ExampleMod;
 import net.minecraft.client.Minecraft;
-import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
-import net.minecraft.util.IChatComponent;
 import net.minecraft.world.World;
-import org.lwjgl.Sys;
 
 public class ItemDetonator extends Item {
     public ItemDetonator() {

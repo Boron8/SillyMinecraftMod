@@ -2,10 +2,7 @@ package me.creeper.creepermodtest.renderers;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import me.creeper.creepermodtest.handlers.DetonatorHeldHandler;
-import me.creeper.creepermodtest.keyBindings.KeybindingToggleTestRenderer;
 import net.minecraft.client.Minecraft;
-import net.minecraft.init.Blocks;
-import net.minecraft.util.ChatComponentText;
 import net.minecraftforge.client.event.RenderWorldLastEvent;
 import org.lwjgl.opengl.GL11;
 

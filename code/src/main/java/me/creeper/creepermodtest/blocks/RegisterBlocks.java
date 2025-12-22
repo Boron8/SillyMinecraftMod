@@ -3,14 +3,10 @@ package me.creeper.creepermodtest.blocks;
 import cpw.mods.fml.common.registry.GameRegistry;
 import me.creeper.creepermodtest.ExampleMod;
 import net.minecraft.block.Block;
-import net.minecraft.tileentity.TileEntity;
 
 public class RegisterBlocks {
     public static Block blockTable;
     public static Block blockMallirusOre;
-    public static Block blockBlinker;
-
-    public static TileEntity tileEntityBlinker;
 
     public static class RegisterBlocksHandler {
         public static void registerBlockTable() {

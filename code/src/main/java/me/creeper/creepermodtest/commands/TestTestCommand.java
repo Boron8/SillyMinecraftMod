@@ -7,7 +7,6 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.DamageSource;
 
-
 public class TestTestCommand extends CommandBase {
 
     public String getCommandName() {

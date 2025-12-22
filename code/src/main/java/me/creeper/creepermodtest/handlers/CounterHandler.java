@@ -1,7 +1,6 @@
 package me.creeper.creepermodtest.handlers;
 
 import cpw.mods.fml.common.FMLLog;
-import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import me.creeper.creepermodtest.ExampleMod;

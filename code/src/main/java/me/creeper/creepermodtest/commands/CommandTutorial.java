@@ -1,16 +1,10 @@
 package me.creeper.creepermodtest.commands;
 
-import me.creeper.creepermodtest.blocks.BlockMallirusOre;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
-import net.minecraft.command.PlayerNotFoundException;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.ChatComponentText;
-import net.minecraft.util.ChatComponentTranslation;
-import net.minecraft.util.DamageSource;
-import org.lwjgl.Sys;
 
-import java.util.Arrays;
 import java.util.Objects;
 
 public class CommandTutorial extends CommandBase {

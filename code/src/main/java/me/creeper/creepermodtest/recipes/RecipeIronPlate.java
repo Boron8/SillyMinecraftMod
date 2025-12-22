@@ -1,10 +1,7 @@
 package me.creeper.creepermodtest.recipes;
 
-import me.creeper.creepermodtest.blocks.RegisterBlocks;
 import me.creeper.creepermodtest.items.RegisterItems;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class RecipeIronPlate {

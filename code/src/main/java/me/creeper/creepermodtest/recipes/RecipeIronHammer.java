@@ -1,7 +1,6 @@
 package me.creeper.creepermodtest.recipes;
 
 import me.creeper.creepermodtest.items.RegisterItems;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
