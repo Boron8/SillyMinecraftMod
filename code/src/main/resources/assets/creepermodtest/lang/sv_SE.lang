@@ -4,6 +4,12 @@
 item.itemTest.name=Test
 item.itemCheese.name=Ost
 item.itemGrilledCheese.name=Grillad Ost
+item.diamondHammer.name=Diamant Hammare
+item.stoneHammer.name=Sten Hammare
+item.itemIronPlate.name=Järn Platta
+item.ironHammer.name=Järn Hammare
+item.itemDiamondPlate.name=Diamant Platta
+item.itemDetonator.name=Detonator
 
 
 
@@ -31,5 +37,13 @@ commands.testtest.playerNotFound=Den spelaren hittades inte
 # Tabs             #
 ####################
 itemGroup.tabCreepermodtest=Creeper test mod Tab
+
+
+
+####################
+# Keybindings      #
+####################
+key.creepermodtest.toggleTestRenderer=Växla TestRenderer
+key.categories.creepermodtest=CreeperModTest Keybindings
 
 
