@@ -2,6 +2,7 @@ package me.creeper.creepermodtest.items;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import me.creeper.creepermodtest.ExampleMod;
+import me.creeper.creepermodtest.items.armor.MallirusArmor;
 import me.creeper.creepermodtest.items.tools.DiamondHammer;
 import me.creeper.creepermodtest.items.tools.ItemDetonator;
 import me.creeper.creepermodtest.items.tools.itemIronHammer;
@@ -19,6 +20,10 @@ public class RegisterItems {
     public static Item itemIronHammer;
     public static Item itemDiamondPlate;
     public static Item itemDetonator;
+    public static Item itemMallirusHelmet;
+    public static Item itemMallirusChestplate;
+    public static Item itemMallirusLeggings;
+    public static Item itemMallirusBoots;
 
     public static class RegisterItemsHandler {
         //Item Testz<<
@@ -83,6 +88,17 @@ public class RegisterItems {
             GameRegistry.registerItem(itemDetonator, itemDetonator.getUnlocalizedName().substring(5));
         }
 
+        public static void registerMallirusArmor() {
+            itemMallirusHelmet = new MallirusArmor(MallirusArmor.MALLIRUS_ARMOR_MATERIAL, 0, 0);
+            itemMallirusChestplate = new MallirusArmor(MallirusArmor.MALLIRUS_ARMOR_MATERIAL, 0, 1);
+            itemMallirusLeggings = new MallirusArmor(MallirusArmor.MALLIRUS_ARMOR_MATERIAL, 0, 2);
+            itemMallirusBoots = new MallirusArmor(MallirusArmor.MALLIRUS_ARMOR_MATERIAL, 0, 3);
+            GameRegistry.registerItem(itemMallirusHelmet, "mallirusHelmet");
+            GameRegistry.registerItem(itemMallirusChestplate, "mallirusChestplate");
+            GameRegistry.registerItem(itemMallirusLeggings, "mallirusLeggings");
+            GameRegistry.registerItem(itemMallirusBoots, "mallirusBoots");
+        }
+
 
 
 
@@ -97,7 +113,7 @@ public class RegisterItems {
             registerItemIronHammer();
             registerItemDiamondPlate();
             registerItemDetonator();
-
+            registerMallirusArmor();
 
         }
     }
