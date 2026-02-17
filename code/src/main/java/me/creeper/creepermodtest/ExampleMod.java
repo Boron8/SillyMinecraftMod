@@ -43,7 +43,7 @@ public class ExampleMod {
     public static final String RELEASE_TYPE    = "DEV";
     public static final String RELEASE_VERSION = "1";
     public static final String MODID           = "creepermodtest";
-    public static final String VERSION         = "0.0.1-" + RELEASE_TYPE + "-" + RELEASE_VERSION;
+    public static final String VERSION         = "0.0.2-" + RELEASE_TYPE + "-" + RELEASE_VERSION;
 
     public static boolean debug_print;
     public static File configFile;
