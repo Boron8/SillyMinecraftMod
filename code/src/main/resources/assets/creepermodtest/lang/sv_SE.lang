@@ -1,9 +1,12 @@
+# sv_SE.lang
+
 ####################
 # Items            #
 ####################
 item.itemTest.name=Test
 item.itemCheese.name=Ost
 item.itemGrilledCheese.name=Grillad Ost
+item.itemMallirusGem.name=Mallirus Pärla
 item.diamondHammer.name=Diamant Hammare
 item.stoneHammer.name=Sten Hammare
 item.itemIronPlate.name=Järn Platta
@@ -16,10 +19,9 @@ item.itemDetonator.name=Detonator
 ####################
 # Blocks           #
 ####################
-tile.blockTable.name=Bord Block
-tile.blockMallirusOre.name=Mallirus-Malm
-tile.blockBlinker.name=Blinkare Block
-item.itemMallirusGem.name=Mallirus Pärla
+tile.blockTable.name=Bord
+tile.blockMallirusOre.name=Mallirus Malm
+tile.blockBlinker.name=Blinkare-Block
 
 
 
@@ -27,7 +29,7 @@ item.itemMallirusGem.name=Mallirus Pärla
 # Commands         #
 ####################
 #testtest
-commands.testtest.usage=/help <playername|none>
+commands.testtest.usage=/testtest {playername}
 commands.testtest.success=%s har blivit skadad utan problem
 commands.testtest.playerNotFound=Den spelaren hittades inte
 #tutorial
@@ -48,5 +50,6 @@ itemGroup.tabCreepermodtest=Creeper test mod Tab
 ####################
 key.creepermodtest.toggleTestRenderer=Växla TestRenderer
 key.categories.creepermodtest=CreeperModTest Keybindings
+
 
 
