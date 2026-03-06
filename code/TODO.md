@@ -9,4 +9,8 @@
 | Detonator Texture |  NO   | Texture for the detonator            |
 | Hammer Recipe     |  NO   | Fix recipes using hammers            |
 | Tutorial Cleanup  |  NO   | Cleanup tutorial pages code          |
+| Use debug_print   |  No   | Use debug print more                 |
+| ENERGY            |  No   | Cables, Machines, etc                |
+| ExampleMod.java   |  No   | Rename ExampleMod.java file          |
+| Item magnet       |  No   | Pulls in nearby items                |
 
