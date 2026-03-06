@@ -5,8 +5,6 @@ import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.util.ChatComponentText;
 
-import java.util.Objects;
-
 public class CommandVersion extends CommandBase {
     public String getCommandName() {
         return "version";
@@ -24,5 +22,9 @@ public class CommandVersion extends CommandBase {
         commandSender.addChatMessage(new ChatComponentText("ModID: " + ExampleMod.MODID));
         commandSender.addChatMessage(new ChatComponentText("Version: " + ExampleMod.VERSION));
         commandSender.addChatMessage(new ChatComponentText("Author: " + "Creeper9555/Boron8"));
+    }
+
+    public boolean canCommandSenderUseCommand(ICommandSender sender) {
+        return true;
     }
 }
