@@ -1,0 +1,60 @@
+# CreeperTestMod (CTM)
+
+
+<br>
+
+
+## General information:
+- Name: **CreeperTestMod (CTM)**
+- Date: **2024-2026**
+- License: **MIT**
+- ModLoader: **Forge**
+- Version: **1.12.2**
+- Dependencies: **Mixin (UniMixins)**
+
+
+<br>
+
+
+## Features:
+- Blocks:
+  - Mallirus Ore
+  - Table
+- Commands:
+  - Tutorial
+  - Version
+  - TestTest
+- Items:
+  - Mallirus Armor
+  - Diamond/Iron/Stone Hammer
+  - Diamond/Iron/Stone Plates
+  - Detonator
+  - Cheese
+  - Grilled Cheese
+  - Mallirus Gem
+  - Test
+- KeyBindings:
+  - ToggleTestRenderer (Unused)
+
+
+<br>
+
+
+# TODO LIST FOR CTM
+High prio = Higher priority <br>
+Prio: 1-10
+
+| Name              | Fix | Prio | Description                          |
+|-------------------|:---:|:----:|--------------------------------------|
+| Tutorial Bug      | YES |  0   | Check if Sender is instanceof player |
+| Hammer Textures   | NO  |  2   | Textures for Stone/Iron Hammers      |
+| Plate Textures    | NO  |  2   | Textures for Plates                  |
+| Detonator Texture | NO  |  3   | Texture for the detonator            |
+| Hammer Recipes    | NO  |  6   | Fix recipes using hammers            |
+| Tutorial Cleanup  | NO  |  6   | Cleanup tutorial pages code          |
+| Use debug_print   | No  |  8   | Use debug print more                 |
+| ENERGY            | No  |  1   | Cables, Machines, etc                |
+| ExampleMod.java   | No  |  3   | Rename ExampleMod.java file          |
+| Item magnet       | No  |  4   | Pulls in nearby items                |
+| Mixins            | YES |  7   | Add mixin support                    |
+
