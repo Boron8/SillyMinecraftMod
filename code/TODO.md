@@ -13,4 +13,5 @@
 | ENERGY            |  No   | Cables, Machines, etc                |
 | ExampleMod.java   |  No   | Rename ExampleMod.java file          |
 | Item magnet       |  No   | Pulls in nearby items                |
+| Mixins            |  YES  | Add mixin support                    |
 

@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.creeper.creepermodtest.mixin",
+  "refmap": "mixins.creepermodtest.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinPiston"
+  ],
+  "client": [],
+  "server": []
+}
