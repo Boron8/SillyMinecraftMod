@@ -50,13 +50,16 @@ public class RegisterRecipes {
             GameRegistry.addShapedRecipe(RecipeStoneHammer.output_item, RecipeStoneHammer.recipe);
         }
         public static void registerRecipeIronPlate() {
-            GameRegistry.addShapelessRecipe(RecipeIronPlate.output_item, RecipeIronPlate.recipe);
+            GameRegistry.addShapelessRecipe(RecipeIronPlate.output_item, RecipeIronPlate.recipeStoneHammer);
+            GameRegistry.addShapelessRecipe(RecipeIronPlate.output_item, RecipeIronPlate.recipeIronHammer);
+            GameRegistry.addShapelessRecipe(RecipeIronPlate.output_item, RecipeIronPlate.recipeDiamondHammer);
         }
         public static void registerRecipeIronHammer() {
             GameRegistry.addShapedRecipe(RecipeIronHammer.output_item, RecipeIronHammer.recipe);
         }
         public static void registerRecipeDiamondPlate() {
-            GameRegistry.addShapelessRecipe(RecipeDiamondPlate.output_item, RecipeDiamondPlate.recipe);
+            GameRegistry.addShapelessRecipe(RecipeDiamondPlate.output_item, RecipeDiamondPlate.recipeIronHammer);
+            GameRegistry.addShapelessRecipe(RecipeDiamondPlate.output_item, RecipeDiamondPlate.recipeDiamondHammer);
         }
         public static void registerRecipeDiamondHammer() {
             GameRegistry.addShapedRecipe(RecipeDiamondHammer.output_item, RecipeDiamondHammer.recipe);

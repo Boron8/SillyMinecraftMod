@@ -3,11 +3,20 @@ package me.creeper.creepermodtest.recipes;
 import me.creeper.creepermodtest.items.RegisterItems;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class RecipeIronPlate {
     static ItemStack output_item = new ItemStack(RegisterItems.itemIronPlate);
-    static Object[] recipe = new Object[]{
+    static Object[] recipeStoneHammer = new Object[]{
             new ItemStack(Items.iron_ingot),
-            new ItemStack(RegisterItems.itemStoneHammer)
+            new ItemStack(RegisterItems.itemStoneHammer, 1, OreDictionary.WILDCARD_VALUE)
+    };
+    static Object[] recipeIronHammer = new Object[]{
+            new ItemStack(Items.iron_ingot),
+            new ItemStack(RegisterItems.itemIronHammer, 1, OreDictionary.WILDCARD_VALUE)
+    };
+    static Object[] recipeDiamondHammer = new Object[]{
+            new ItemStack(Items.iron_ingot),
+            new ItemStack(RegisterItems.itemDiamondHammer, 1, OreDictionary.WILDCARD_VALUE)
     };
 }

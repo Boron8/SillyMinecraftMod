@@ -4,6 +4,7 @@ import me.creeper.creepermodtest.ExampleMod;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MovingObjectPosition;
@@ -15,8 +16,8 @@ public class DiamondHammer extends ItemPickaxe {
             "DIAMOND_HAMMER",
             3,
             2000,
-            9.0f,
-            4.0f,
+            8.0f,
+            3.0f,
             12
     );
 
@@ -58,11 +59,33 @@ public class DiamondHammer extends ItemPickaxe {
 
                 if (target == null || target.isAir(world, blockX, blockY, blockZ)) continue;
 
-                // func_147480_a = Break and Drop block
+                if (target.getBlockHardness(world, blockX, blockY, blockZ) < 0) continue;
+
+                // func_147480_a = Break and Drop block naturally
                 world.func_147480_a(blockX, blockY, blockZ, true);
                 stack.damageItem(1, player);
             }
         }
         return true;
+    }
+
+    @Override
+    public ItemStack getContainerItem(ItemStack itemStack) {
+        ItemStack stack = itemStack.copy();
+        stack.setItemDamage(stack.getItemDamage() + 1);
+
+        if (stack.getItemDamage() < 0) { return new ItemStack(Blocks.air); }
+
+        return stack;
+    }
+
+    @Override
+    public boolean hasContainerItem() {
+        return true;
+    }
+
+    @Override
+    public boolean doesContainerItemLeaveCraftingGrid(ItemStack item) {
+        return false;
     }
 }
