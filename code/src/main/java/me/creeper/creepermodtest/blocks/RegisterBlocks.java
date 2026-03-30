@@ -1,6 +1,7 @@
 package me.creeper.creepermodtest.blocks;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import me.creeper.creepermodtest.ExampleMod;
 import net.minecraft.block.Block;
 
 public class RegisterBlocks {
@@ -20,8 +21,10 @@ public class RegisterBlocks {
 
 
         public static void registerAllBlocks() {
+            ExampleMod.debugLog("Registering blocks...");
             registerBlockTable();
             registerMallirusOre();
+            ExampleMod.debugLog("Registering blocks done.");
         }
     }
 }

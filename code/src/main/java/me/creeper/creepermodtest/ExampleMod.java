@@ -47,7 +47,7 @@ public class ExampleMod {
     public static final String MODID           = "creepermodtest";
     public static final String VERSION         = "0.0.2-" + RELEASE_TYPE + "-" + RELEASE_VERSION;
 
-    public static boolean debug_print;
+    public static boolean debug_print = true;
     public static File configFile;
 
     public static Counter globalCounter;
@@ -60,6 +60,7 @@ public class ExampleMod {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        ExampleMod.debugLog("PreInit...", true);
         //1
         //Item/block init and registering
         //Config handling
@@ -76,28 +77,36 @@ public class ExampleMod {
         try {
             config.load();
 
-             debug_print = config.getBoolean("debug_print", Configuration.CATEGORY_GENERAL, false, "Enable debug print mode");
+            debug_print = config.getBoolean("debug_print", Configuration.CATEGORY_GENERAL, false, "Enable debug print mode");
 
             if (config.hasChanged()) {
                 config.save();
             }
         } catch (Exception e) {
-            FMLLog.severe("There was a problem loading the configuration file");
+            FMLLog.severe("There was a problem loading the configuration file, using default settings...");
+            FMLLog.info("debug_print Will be force trued");
+            debug_print = true;
+
             e.printStackTrace();
         }
 
         RegisterItems.RegisterItemsHandler.registerAllItems();
         RegisterBlocks.RegisterBlocksHandler.registerAllBlocks();
+
+        ExampleMod.debugLog("PreInit done.", true);
     }
 
     @SideOnly(Side.CLIENT)
     public void preInitClient(FMLPreInitializationEvent event) {
+        ExampleMod.debugLog("PreInit client...", true);
         mc = Minecraft.getMinecraft();
+        ExampleMod.debugLog("PreInit client done.", true);
     }
 
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
+        ExampleMod.debugLog("Init...");
         //2
         //Proxy, entity, GUI, Packet registering, World generation
         //Recipe registering
@@ -115,22 +124,27 @@ public class ExampleMod {
         }
 
         FMLCommonHandler.instance().bus().register(new DetonatorHeldHandler());
+        ExampleMod.debugLog("Init done.");
     }
 
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
+        ExampleMod.debugLog("PostInit...");
         // Inter mod compatibility
+        ExampleMod.debugLog("PostInit Done.");
     }
 
 
     @EventHandler
     public void onServerStart(FMLServerStartingEvent event) {
+        ExampleMod.debugLog("ServerStart...");
         MinecraftServer server = MinecraftServer.getServer();
         ICommandManager command = server.getCommandManager();
         ServerCommandManager manager = (ServerCommandManager) command;
 
         RegisterCommands.RegisterCommandsHandler.registerAllCommands(manager);
+        ExampleMod.debugLog("ServerStart done.");
     }
 
 
@@ -141,4 +155,14 @@ public class ExampleMod {
             return new ItemStack(RegisterItems.itemCheese).getItem();
         }
     };
+
+
+    public static void debugLog(String msg, boolean ignore) {
+        if (debug_print || ignore) {
+            FMLLog.info("[CMT DBG]: " + msg);
+        }
+    }
+    public static void debugLog(String msg) {
+        ExampleMod.debugLog(msg, false);
+    }
 }

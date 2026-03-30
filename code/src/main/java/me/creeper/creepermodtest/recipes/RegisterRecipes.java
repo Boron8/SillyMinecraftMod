@@ -1,6 +1,7 @@
 package me.creeper.creepermodtest.recipes;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import me.creeper.creepermodtest.ExampleMod;
 
 public class RegisterRecipes {
     public static class RegisterRecipesHandler {
@@ -73,6 +74,7 @@ public class RegisterRecipes {
 
 
         public static void registerAllRecipes() {
+            ExampleMod.debugLog("Registering recipes...");
             // Crafting
             registerRecipeBlockTable();
             registerRecipeCheese();
@@ -90,6 +92,7 @@ public class RegisterRecipes {
             // Smelting
             registerRecipeGrilledCheese();
             registerRecipeMallirusGem();
+            ExampleMod.debugLog("Registering recipes done.");
         }
     }
 }

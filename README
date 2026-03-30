@@ -52,9 +52,10 @@ Prio: 1-10
 | Detonator Texture | NO  |  3   | Texture for the detonator            |
 | Hammer Recipes    | NO  |  6   | Fix recipes using hammers            |
 | Tutorial Cleanup  | NO  |  6   | Cleanup tutorial pages code          |
-| Use debug_print   | No  |  8   | Use debug print more                 |
+| Use debug_print   | YES |  8   | Use debug print more                 |
 | ENERGY            | No  |  1   | Cables, Machines, etc                |
 | ExampleMod.java   | No  |  3   | Rename ExampleMod.java file          |
 | Item magnet       | No  |  4   | Pulls in nearby items                |
 | Mixins            | YES |  7   | Add mixin support                    |
+| Fix mcmod.info    | No  |  6   | Add mixin support                    |
 

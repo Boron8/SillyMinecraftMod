@@ -101,6 +101,7 @@ public class RegisterItems {
 
 
         public static void registerAllItems() {
+            ExampleMod.debugLog("Registering items...");
             registerItemTest();
             registerItemCheese();
             registerItemGrilledCheese();
@@ -112,6 +113,7 @@ public class RegisterItems {
             registerItemDiamondPlate();
             registerItemDetonator();
             registerMallirusArmor();
+            ExampleMod.debugLog("Registering items done.");
         }
     }
 }

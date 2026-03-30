@@ -1,5 +1,6 @@
 package me.creeper.creepermodtest.commands;
 
+import me.creeper.creepermodtest.ExampleMod;
 import net.minecraft.command.ServerCommandManager;
 
 public class RegisterCommands {
@@ -18,9 +19,11 @@ public class RegisterCommands {
 
 
         public static void registerAllCommands(ServerCommandManager manager) {
+            ExampleMod.debugLog("Registering commands...");
             registerCommandTestTest(manager);
             registerCommandTutorial(manager);
             registerCommandVersion(manager);
+            ExampleMod.debugLog("Registering commands done.");
         }
     }
 }
