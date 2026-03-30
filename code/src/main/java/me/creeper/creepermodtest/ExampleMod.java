@@ -5,6 +5,8 @@ import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import me.creeper.creepermodtest.blocks.RegisterBlocks;
 import me.creeper.creepermodtest.commands.RegisterCommands;
 import me.creeper.creepermodtest.generation.RegisterOreGeneration;
@@ -14,10 +16,10 @@ import me.creeper.creepermodtest.items.RegisterItems;
 import me.creeper.creepermodtest.recipes.RegisterRecipes;
 import me.creeper.creepermodtest.renderers.TestRenderer;
 import me.creeper.creepermodtest.utils.Counter;
-import net.minecraft.block.Block;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import net.minecraft.client.Minecraft;
 import net.minecraft.command.*;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -52,12 +54,17 @@ public class ExampleMod {
 
     public static Random random = new Random();
 
+    @SideOnly(Side.CLIENT)
+    public static Minecraft mc;
+
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         //1
         //Item/block init and registering
         //Config handling
+
+        preInitClient(event);
 
         globalCounter = new Counter();
 
@@ -83,7 +90,10 @@ public class ExampleMod {
         RegisterBlocks.RegisterBlocksHandler.registerAllBlocks();
     }
 
-
+    @SideOnly(Side.CLIENT)
+    public void preInitClient(FMLPreInitializationEvent event) {
+        mc = Minecraft.getMinecraft();
+    }
 
 
     @EventHandler
@@ -93,18 +103,9 @@ public class ExampleMod {
         //Recipe registering
         //Custom Renderers
 
-
-
-        //System.out.println("DIRT BLOCK >> "+Blocks.dirt.getUnlocalizedName());
-
-        final Block air = (Block)Block.blockRegistry.getObject("air");
-        System.out.println("AIR BLOCK >> "+air.getUnlocalizedName());
-
-
         RegisterRecipes.RegisterRecipesHandler.registerAllRecipes();
 
         RegisterOreGeneration.RegisterOreGenerationHandler.registerAllGeneration();
-
 
         MinecraftForge.EVENT_BUS.register(new TestRenderer());
 
@@ -117,13 +118,10 @@ public class ExampleMod {
     }
 
 
-
-
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-        //3
+        // Inter mod compatibility
     }
-
 
 
     @EventHandler
@@ -135,12 +133,12 @@ public class ExampleMod {
         RegisterCommands.RegisterCommandsHandler.registerAllCommands(manager);
     }
 
+
+
     public static CreativeTabs tabCreepermodtest = new CreativeTabs("tabCreepermodtest") {
         @Override
         public Item getTabIconItem() {
             return new ItemStack(RegisterItems.itemCheese).getItem();
         }
     };
-
-
 }

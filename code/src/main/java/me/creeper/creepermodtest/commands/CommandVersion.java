@@ -6,17 +6,11 @@ import net.minecraft.command.ICommandSender;
 import net.minecraft.util.ChatComponentText;
 
 public class CommandVersion extends CommandBase {
-    public String getCommandName() {
-        return "version";
-    }
+    public String getCommandName() { return "version"; }
 
-    public String getCommandUsage(ICommandSender commandSender) {
-        return "command.version.usage";
-    }
+    public String getCommandUsage(ICommandSender commandSender) { return "command.version.usage"; }
 
-    public int getRequiredPermissionLevel() {
-        return 0;
-    }
+    public int getRequiredPermissionLevel() { return 0; }
 
     public void processCommand(ICommandSender commandSender, String[] args) {
         commandSender.addChatMessage(new ChatComponentText("ModID: " + ExampleMod.MODID));
@@ -24,7 +18,5 @@ public class CommandVersion extends CommandBase {
         commandSender.addChatMessage(new ChatComponentText("Author: " + "Creeper9555/Boron8"));
     }
 
-    public boolean canCommandSenderUseCommand(ICommandSender sender) {
-        return true;
-    }
+    public boolean canCommandSenderUseCommand(ICommandSender sender) { return true; }
 }

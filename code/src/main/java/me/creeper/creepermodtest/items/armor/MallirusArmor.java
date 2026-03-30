@@ -1,7 +1,6 @@
 package me.creeper.creepermodtest.items.armor;
 
 import me.creeper.creepermodtest.ExampleMod;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;

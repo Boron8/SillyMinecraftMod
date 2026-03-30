@@ -9,17 +9,11 @@ import net.minecraft.util.DamageSource;
 
 public class TestTestCommand extends CommandBase {
 
-    public String getCommandName() {
-        return "testtest";
-    }
+    public String getCommandName() { return "testtest"; }
 
-    public String getCommandUsage(ICommandSender commandSender) {
-        return "command.testtest.usage";
-    }
+    public String getCommandUsage(ICommandSender commandSender) { return "command.testtest.usage"; }
 
-    public int getRequiredPermissionLevel() {
-        return 2;
-    }
+    public int getRequiredPermissionLevel() { return 2; }
 
     public void processCommand(ICommandSender commandSender, String[] args) {
         if (args.length < 1) {

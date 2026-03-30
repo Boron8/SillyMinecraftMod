@@ -1,7 +1,6 @@
 package me.creeper.creepermodtest.blocks;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import me.creeper.creepermodtest.ExampleMod;
 import net.minecraft.block.Block;
 
 public class RegisterBlocks {
@@ -10,12 +9,12 @@ public class RegisterBlocks {
 
     public static class RegisterBlocksHandler {
         public static void registerBlockTable() {
-            blockTable = new BlockTable().setBlockName("blockTable").setBlockTextureName(ExampleMod.MODID+":block_table");
+            blockTable = new BlockTable();
             GameRegistry.registerBlock(blockTable, blockTable.getUnlocalizedName().substring(5));
         }
 
         public static void registerMallirusOre() {
-            blockMallirusOre = new BlockMallirusOre().setBlockName("blockMallirusOre").setBlockTextureName(ExampleMod.MODID+":block_mallirus_ore");
+            blockMallirusOre = new BlockMallirusOre();
             GameRegistry.registerBlock(blockMallirusOre, blockMallirusOre.getUnlocalizedName().substring(5));
         }
 

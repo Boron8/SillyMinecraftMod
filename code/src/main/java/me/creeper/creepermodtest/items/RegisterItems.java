@@ -26,7 +26,7 @@ public class RegisterItems {
     public static Item itemMallirusBoots;
 
     public static class RegisterItemsHandler {
-        //Item Testz<<
+        //Item Test
         public static void registerItemTest() {
             itemTest = new ItemTest().setUnlocalizedName("itemTest").setTextureName(ExampleMod.MODID+":item_test");
             GameRegistry.registerItem(itemTest, itemTest.getUnlocalizedName().substring(5));
@@ -100,8 +100,6 @@ public class RegisterItems {
         }
 
 
-
-
         public static void registerAllItems() {
             registerItemTest();
             registerItemCheese();
@@ -114,7 +112,6 @@ public class RegisterItems {
             registerItemDiamondPlate();
             registerItemDetonator();
             registerMallirusArmor();
-
         }
     }
 }

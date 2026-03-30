@@ -9,8 +9,10 @@ public class itemIronHammer extends Item {
         super();
         this.setMaxStackSize(1);
         this.setMaxDamage(128);
+
         this.setUnlocalizedName("ironHammer");
         this.setTextureName("minecraft:iron_pickaxe");
+
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
     }
 
@@ -27,7 +29,7 @@ public class itemIronHammer extends Item {
     }
 
     @Override
-    public boolean doesContainerItemLeaveCraftingGrid(ItemStack p_77630_1_) {
+    public boolean doesContainerItemLeaveCraftingGrid(ItemStack item) {
         return false;
     }
 }

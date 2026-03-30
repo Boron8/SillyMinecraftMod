@@ -18,7 +18,6 @@ public class ItemDetonator extends Item {
     }
 
 
-
     @Override
     public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player) {
         for (int i = 0; i < 5; i++) {
@@ -34,11 +33,11 @@ public class ItemDetonator extends Item {
         if (!world.isRemote) {
             player.addChatMessage(new ChatComponentText("Detonated"));
 
-            Minecraft mc = Minecraft.getMinecraft();
 
-            double x = mc.thePlayer.rayTrace(1000, 0.0f).hitVec.xCoord;
-            double y = mc.thePlayer.rayTrace(1000, 0.0f).hitVec.yCoord;
-            double z = mc.thePlayer.rayTrace(1000, 0.0f).hitVec.zCoord;
+
+            double x = ExampleMod.mc.thePlayer.rayTrace(1000, 0.0f).hitVec.xCoord;
+            double y = ExampleMod.mc.thePlayer.rayTrace(1000, 0.0f).hitVec.yCoord;
+            double z = ExampleMod.mc.thePlayer.rayTrace(1000, 0.0f).hitVec.zCoord;
 
             for (int i = 0; i < 20; i++) {
                 int xOffset = ExampleMod.random.nextInt(21)-10;

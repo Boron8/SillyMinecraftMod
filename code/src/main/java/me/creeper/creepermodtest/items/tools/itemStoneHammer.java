@@ -9,8 +9,10 @@ public class itemStoneHammer extends Item {
         super();
         this.setMaxStackSize(1);
         this.setMaxDamage(64);
+
         this.setUnlocalizedName("stoneHammer");
         this.setTextureName("minecraft:stone_pickaxe");
+
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
     }
 
@@ -27,7 +29,7 @@ public class itemStoneHammer extends Item {
     }
 
     @Override
-    public boolean doesContainerItemLeaveCraftingGrid(ItemStack p_77630_1_) {
+    public boolean doesContainerItemLeaveCraftingGrid(ItemStack item) {
         return false;
     }
 }

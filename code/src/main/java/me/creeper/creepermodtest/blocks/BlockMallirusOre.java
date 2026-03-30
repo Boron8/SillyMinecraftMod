@@ -12,5 +12,8 @@ public class BlockMallirusOre extends Block {
         this.setHarvestLevel("pickaxe", 2);
         this.setStepSound(soundTypeStone);
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
+
+        this.setBlockName("blockMallirusOre");
+        this.setBlockTextureName(ExampleMod.MODID+":block_mallirus_ore");
     }
 }

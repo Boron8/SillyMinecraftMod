@@ -13,10 +13,11 @@ public class BlockTable extends Block {
         this.setLightLevel(0.1F);
         this.setStepSound(soundTypeWood);
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
+
+        this.setBlockName("blockTable");
+        this.setBlockTextureName(ExampleMod.MODID+":block_table");
     }
 
     @Override
-    public boolean isOpaqueCube() {
-        return false;
-    }
+    public boolean isOpaqueCube() { return false; }
 }
