@@ -8,6 +8,7 @@ import me.creeper.creepermodtest.items.tools.ItemDetonator;
 import me.creeper.creepermodtest.items.tools.itemIronHammer;
 import me.creeper.creepermodtest.items.tools.itemStoneHammer;
 import net.minecraft.item.Item;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class RegisterItems {
     public static Item itemTest;
@@ -37,6 +38,9 @@ public class RegisterItems {
             // hunger saturation can_be_eaten_by_wolf
             itemCheese = new ItemCheese().setUnlocalizedName("itemCheese").setTextureName(ExampleMod.MODID+":item_cheese");
             GameRegistry.registerItem(itemCheese, itemCheese.getUnlocalizedName().substring(5));
+            OreDictionary.registerOre("listAllfood", itemCheese);   // Pams standards
+            OreDictionary.registerOre("listAllmilk", itemCheese);   // Pams standards
+            OreDictionary.registerOre("foodCheese", itemCheese);    // Pams standards
         }
 
         //Item Grilled Cheese
@@ -44,42 +48,54 @@ public class RegisterItems {
             // hunger saturation can_be_eaten_by_wolf
             itemGrilledCheese = new ItemGrilledCheese().setUnlocalizedName("itemGrilledCheese").setTextureName(ExampleMod.MODID+":item_grilled_cheese");
             GameRegistry.registerItem(itemGrilledCheese, itemGrilledCheese.getUnlocalizedName().substring(5));
+            OreDictionary.registerOre("listAllfood", itemGrilledCheese);
+            OreDictionary.registerOre("listAllmilk", itemGrilledCheese);
+            OreDictionary.registerOre("foodGrilledCheese", itemGrilledCheese);
         }
 
         //Item Mallirus Gem
         public static void registerItemMallirusGem() {
             itemMallirusGem = new ItemMallirusGem();
             GameRegistry.registerItem(itemMallirusGem, itemMallirusGem.getUnlocalizedName().substring(5));
+            OreDictionary.registerOre("gemMallirus", itemMallirusGem);
         }
 
         //Item Diamond Hammer
         public static void registerItemDiamondHammer() {
             itemDiamondHammer = new DiamondHammer(DiamondHammer.DIAMOND_HAMMER);
             GameRegistry.registerItem(itemDiamondHammer, itemDiamondHammer.getUnlocalizedName().substring(5));
+            OreDictionary.registerOre("toolHammer", itemDiamondHammer);
+            OreDictionary.registerOre("toolDiamondHammer", itemDiamondHammer);
         }
 
         //Item Stone Hammer
         public static void registerItemStoneHammer() {
             itemStoneHammer = new itemStoneHammer();
             GameRegistry.registerItem(itemStoneHammer, itemStoneHammer.getUnlocalizedName().substring(5));
+            OreDictionary.registerOre("toolHammer", itemStoneHammer);
+            OreDictionary.registerOre("toolStoneHammer", itemStoneHammer);
         }
 
         //Item Iron Plate
         public static void registerItemIronPlate() {
             itemIronPlate = new itemIronPlate();
             GameRegistry.registerItem(itemIronPlate, itemIronPlate.getUnlocalizedName().substring(5));
+            OreDictionary.registerOre("plateIron", itemIronPlate);
         }
 
         //Item Iron Hammer
         public static void registerItemIronHammer() {
             itemIronHammer = new itemIronHammer();
             GameRegistry.registerItem(itemIronHammer, itemIronHammer.getUnlocalizedName().substring(5));
+            OreDictionary.registerOre("toolHammer", itemIronHammer);
+            OreDictionary.registerOre("toolIronHammer", itemIronHammer);
         }
 
         //Item Diamond Plate
         public static void registerItemDiamondPlate() {
             itemDiamondPlate = new itemDiamondPlate();
             GameRegistry.registerItem(itemDiamondPlate, itemDiamondPlate.getUnlocalizedName().substring(5));
+            OreDictionary.registerOre("plateDiamond", itemDiamondPlate);
         }
 
         //Item Diamond Plate
@@ -103,16 +119,23 @@ public class RegisterItems {
         public static void registerAllItems() {
             ExampleMod.debugLog("Registering items...");
             registerItemTest();
+
             registerItemCheese();
             registerItemGrilledCheese();
+
             registerItemMallirusGem();
+
             registerItemDiamondHammer();
-            registerItemStoneHammer();
-            registerItemIronPlate();
             registerItemIronHammer();
+            registerItemStoneHammer();
+
+            registerItemIronPlate();
             registerItemDiamondPlate();
+
             registerItemDetonator();
+
             registerMallirusArmor();
+
             ExampleMod.debugLog("Registering items done.");
         }
     }

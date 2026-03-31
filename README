@@ -58,5 +58,5 @@ Prio: 1-10
 | Item magnet       | No  |  4   | Pulls in nearby items                |
 | Mixins            | YES |  7   | Add mixin support                    |
 | Fix mcmod.info    | No  |  6   | Fix mcmod.info things                |
-| OreDict           | No  |  4   | Add OreDict for blocks/items         |
+| OreDict           | Yes |  4   | Add OreDict for blocks/items         |
 

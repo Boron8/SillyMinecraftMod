@@ -80,12 +80,8 @@ public class DiamondHammer extends ItemPickaxe {
     }
 
     @Override
-    public boolean hasContainerItem() {
-        return true;
-    }
+    public boolean hasContainerItem() { return true; }
 
     @Override
-    public boolean doesContainerItemLeaveCraftingGrid(ItemStack item) {
-        return false;
-    }
+    public boolean doesContainerItemLeaveCraftingGrid(ItemStack item) { return false; }
 }

@@ -3,6 +3,7 @@ package me.creeper.creepermodtest.blocks;
 import cpw.mods.fml.common.registry.GameRegistry;
 import me.creeper.creepermodtest.ExampleMod;
 import net.minecraft.block.Block;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class RegisterBlocks {
     public static Block blockTable;
@@ -17,6 +18,7 @@ public class RegisterBlocks {
         public static void registerMallirusOre() {
             blockMallirusOre = new BlockMallirusOre();
             GameRegistry.registerBlock(blockMallirusOre, blockMallirusOre.getUnlocalizedName().substring(5));
+            OreDictionary.registerOre("oreMallirus", blockMallirusOre);
         }
 
 
