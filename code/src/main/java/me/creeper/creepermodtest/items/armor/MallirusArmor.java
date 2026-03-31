@@ -1,11 +1,10 @@
 package me.creeper.creepermodtest.items.armor;
 
 import me.creeper.creepermodtest.ExampleMod;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
-
-import javax.swing.text.html.parser.Entity;
 
 public class MallirusArmor extends ItemArmor {
     public static ItemArmor.ArmorMaterial MALLIRUS_ARMOR_MATERIAL =

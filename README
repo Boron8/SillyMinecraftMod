@@ -57,6 +57,6 @@ Prio: 1-10
 | ExampleMod.java   | No  |  3   | Rename ExampleMod.java file          |
 | Item magnet       | No  |  4   | Pulls in nearby items                |
 | Mixins            | YES |  7   | Add mixin support                    |
-| Fix mcmod.info    | No  |  6   | Fix mcmod.info things                |
+| Fix mcmod.info    | YES |  6   | Fix mcmod.info things                |
 | OreDict           | Yes |  4   | Add OreDict for blocks/items         |
 

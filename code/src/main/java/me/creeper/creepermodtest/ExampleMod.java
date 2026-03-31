@@ -10,6 +10,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import me.creeper.creepermodtest.blocks.RegisterBlocks;
 import me.creeper.creepermodtest.commands.RegisterCommands;
 import me.creeper.creepermodtest.generation.RegisterOreGeneration;
+import me.creeper.creepermodtest.handlers.CounterHandler;
 import me.creeper.creepermodtest.handlers.DetonatorHeldHandler;
 import me.creeper.creepermodtest.handlers.KeybindingsHandler;
 import me.creeper.creepermodtest.items.RegisterItems;
@@ -50,7 +51,8 @@ public class ExampleMod {
     public static boolean debug_print = true;
     public static File configFile;
 
-    public static Counter globalCounter;
+    public static Counter globalServerCounter; // Only when server is running
+    public static Counter globalClientCounter; // Always, as long as client is running
 
     public static Random random = new Random();
 
@@ -67,7 +69,8 @@ public class ExampleMod {
 
         preInitClient(event);
 
-        globalCounter = new Counter();
+        globalServerCounter = new Counter();
+        globalClientCounter = new Counter();
 
 
         configFile = event.getSuggestedConfigurationFile();
@@ -112,18 +115,28 @@ public class ExampleMod {
         //Recipe registering
         //Custom Renderers
 
+        // Recipes
         RegisterRecipes.RegisterRecipesHandler.registerAllRecipes();
 
+        // World Gen
         RegisterOreGeneration.RegisterOreGenerationHandler.registerAllGeneration();
 
+        // Forge Events
         MinecraftForge.EVENT_BUS.register(new TestRenderer());
+        MinecraftForge.EVENT_BUS.register(new CounterHandler());
 
         if (event.getSide().isClient()) {
+            // Keybindings
             registerAllKeybindings();
+
+            // Handlers (Client)
             FMLCommonHandler.instance().bus().register(new KeybindingsHandler());
+            FMLCommonHandler.instance().bus().register(new DetonatorHeldHandler());
         }
 
-        FMLCommonHandler.instance().bus().register(new DetonatorHeldHandler());
+        // Handlers (Client+Server)
+        FMLCommonHandler.instance().bus().register(new CounterHandler());
+
         ExampleMod.debugLog("Init done.");
     }
 

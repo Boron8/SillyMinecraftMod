@@ -37,9 +37,9 @@ public class CommandTutorial extends CommandBase {
 
 
     public static String showCommands =  "\nCommands:\n" +
-                                         "  Version - /tutorial blocks version\n" +
-                                         "  Tutorial - /tutorial blocks tutorial\n" +
-                                         "  TestTest - /tutorial blocks testtest";
+                                         "  Version - /tutorial commands version\n" +
+                                         "  Tutorial - /tutorial commands tutorial\n" +
+                                         "  TestTest - /tutorial commands testtest";
 
     public static String versionCommand = "\nVersion Command:\n" +
                                           "  Permission - All, 0\n" +
@@ -156,6 +156,7 @@ public class CommandTutorial extends CommandBase {
         } else if (Objects.equals(page, "blocks")) {
             if (subPage.isEmpty()) {
                 TutorialPages.TutorialBlocks.show(playerMP);
+                return;
             } else if (Objects.equals(subPage, "mallirus")) {
                 TutorialPages.TutorialBlocks.TutorialMallirusOre.show(playerMP);
                 return;
@@ -169,6 +170,7 @@ public class CommandTutorial extends CommandBase {
         } else if (Objects.equals(page, "commands")) {
             if (subPage.isEmpty()) {
                 TutorialPages.TutorialCommands.show(playerMP);
+                return;
             } else if (Objects.equals(subPage, "version")) {
                 TutorialPages.TutorialCommands.TutorialVersion.show(playerMP);
                 return;
