@@ -51,14 +51,13 @@ public class ExampleMod {
     public static boolean debug_print = true;
     public static File configFile;
 
-    public static Counter globalServerCounter; // Only when server is running
-    public static Counter globalClientCounter; // Always, as long as client is running
+    private static final Counter globalServerCounter = new Counter();
+    private static final Counter globalClientCounter = new Counter();
 
     public static Random random = new Random();
 
     @SideOnly(Side.CLIENT)
     public static Minecraft mc;
-
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -67,10 +66,9 @@ public class ExampleMod {
         //Item/block init and registering
         //Config handling
 
-        preInitClient(event);
-
-        globalServerCounter = new Counter();
-        globalClientCounter = new Counter();
+        if (event.getSide().isClient()) {
+            mc = Minecraft.getMinecraft();
+        }
 
 
         configFile = event.getSuggestedConfigurationFile();
@@ -97,13 +95,6 @@ public class ExampleMod {
         RegisterBlocks.RegisterBlocksHandler.registerAllBlocks();
 
         ExampleMod.debugLog("PreInit done.", true);
-    }
-
-    @SideOnly(Side.CLIENT)
-    public void preInitClient(FMLPreInitializationEvent event) {
-        ExampleMod.debugLog("PreInit client...", true);
-        mc = Minecraft.getMinecraft();
-        ExampleMod.debugLog("PreInit client done.", true);
     }
 
 
@@ -176,5 +167,12 @@ public class ExampleMod {
     }
     public static void debugLog(String msg) {
         ExampleMod.debugLog(msg, false);
+    }
+
+    public static Counter getServerCounter() {
+        return globalServerCounter;
+    }
+    public static Counter getClientCounter() {
+        return globalClientCounter;
     }
 }
