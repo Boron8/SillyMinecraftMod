@@ -5,18 +5,21 @@ import me.creeper.creepermodtest.ExampleMod;
 
 public class Counter {
     private int count = 1;
+    private int resetCount = 0;
 
     public void increment() {
         if (count < 20) {
             count++;
         } else {
             count = 1;
+            resetCount++;
         }
     }
 
-    public int     getCount() { return count; }
-    public void    reset()    { count = 1; }
-    public boolean isSecond() { return count == 1; }
+    public int     getCount()      { return count; }
+    public void    reset()         { count = 1; resetCount = 0; }
+    public boolean isSecond()      { return count == 1; }
+    public int     getResetCount() { return resetCount; }
 
 
     public static Counter getCounter() {
