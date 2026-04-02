@@ -12,7 +12,7 @@ public class itemStoneHammer extends Item {
         this.setMaxDamage(64);
 
         this.setUnlocalizedName("stoneHammer");
-        this.setTextureName("minecraft:stone_pickaxe");
+        this.setTextureName(ExampleMod.MODID+":item_stone_hammer");
 
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
     }

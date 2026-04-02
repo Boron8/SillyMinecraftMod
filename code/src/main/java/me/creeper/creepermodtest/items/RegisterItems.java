@@ -62,7 +62,7 @@ public class RegisterItems {
 
         //Item Diamond Hammer
         public static void registerItemDiamondHammer() {
-            itemDiamondHammer = new DiamondHammer(DiamondHammer.DIAMOND_HAMMER);
+            itemDiamondHammer = new DiamondHammer();
             GameRegistry.registerItem(itemDiamondHammer, itemDiamondHammer.getUnlocalizedName().substring(5));
             OreDictionary.registerOre("toolHammer", itemDiamondHammer);
             OreDictionary.registerOre("toolDiamondHammer", itemDiamondHammer);

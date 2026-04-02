@@ -12,7 +12,7 @@ public class itemIronHammer extends Item {
         this.setMaxDamage(128);
 
         this.setUnlocalizedName("ironHammer");
-        this.setTextureName("minecraft:iron_pickaxe");
+        this.setTextureName(ExampleMod.MODID+":item_iron_hammer");
 
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
     }
