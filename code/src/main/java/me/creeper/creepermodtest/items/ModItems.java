@@ -10,7 +10,7 @@ import me.creeper.creepermodtest.items.tools.ItemStoneHammer;
 import net.minecraft.item.Item;
 import net.minecraftforge.oredict.OreDictionary;
 
-public class Items {
+public class ModItems {
     public static Item registerItem(Item item) {
         GameRegistry.registerItem(item, item.getUnlocalizedName().substring(5));
         return item;

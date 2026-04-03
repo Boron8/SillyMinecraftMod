@@ -2,7 +2,7 @@ package me.creeper.creepermodtest.handlers;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
-import me.creeper.creepermodtest.items.Items;
+import me.creeper.creepermodtest.items.ModItems;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 
@@ -13,7 +13,7 @@ public class DetonatorHeldHandler {
         EntityPlayer player = event.player;
 
         ItemStack heldItem = player.getCurrentEquippedItem();
-        if (heldItem != null && heldItem.getItem() == Items.itemDetonator) {
+        if (heldItem != null && heldItem.getItem() == ModItems.itemDetonator) {
             held = true;
         } else {
             held = false;

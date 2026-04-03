@@ -7,13 +7,13 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import me.creeper.creepermodtest.blocks.RegisterBlocks;
+import me.creeper.creepermodtest.blocks.ModBlocks;
 import me.creeper.creepermodtest.commands.RegisterCommands;
 import me.creeper.creepermodtest.generation.RegisterOreGeneration;
 import me.creeper.creepermodtest.handlers.CounterHandler;
 import me.creeper.creepermodtest.handlers.DetonatorHeldHandler;
 import me.creeper.creepermodtest.handlers.KeybindingsHandler;
-import me.creeper.creepermodtest.items.Items;
+import me.creeper.creepermodtest.items.ModItems;
 import me.creeper.creepermodtest.recipes.RegisterRecipes;
 import me.creeper.creepermodtest.renderers.TestRenderer;
 import me.creeper.creepermodtest.utils.Counter;
@@ -91,8 +91,8 @@ public class ExampleMod {
             e.printStackTrace();
         }
 
-        Items.registerItems();
-        RegisterBlocks.RegisterBlocksHandler.registerAllBlocks();
+        ModItems.registerItems();
+        ModBlocks.registerAllBlocks();
 
         ExampleMod.debugLog("PreInit done.", true);
     }
@@ -155,7 +155,7 @@ public class ExampleMod {
     public static CreativeTabs tabCreepermodtest = new CreativeTabs("tabCreepermodtest") {
         @Override
         public Item getTabIconItem() {
-            return new ItemStack(Items.itemCheese).getItem();
+            return new ItemStack(ModItems.itemCheese).getItem();
         }
     };
 

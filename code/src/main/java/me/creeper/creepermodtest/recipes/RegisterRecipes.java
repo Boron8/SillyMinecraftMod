@@ -5,7 +5,7 @@ import me.creeper.creepermodtest.ExampleMod;
 
 public class RegisterRecipes {
     public static void registerAllCrafting() {
-        for (RecipeData recipe : Recipes.craftingRecipes) {
+        for (RecipeData recipe : ModRecipes.craftingRecipes) {
             if (recipe.shapeless) {
                 GameRegistry.addShapelessRecipe(recipe.output, recipe.inputs);
             } else {
@@ -15,7 +15,7 @@ public class RegisterRecipes {
     }
 
     public static void registerAllSmelting() {
-        for (RecipeData recipe : Recipes.smeltingRecipes) {
+        for (RecipeData recipe : ModRecipes.smeltingRecipes) {
             GameRegistry.addSmelting(recipe.smeltInput, recipe.output, recipe.xp);
         }
     }
@@ -23,7 +23,7 @@ public class RegisterRecipes {
     public static void registerRecipes() {
         ExampleMod.debugLog("Registering recipes...");
 
-        Recipes.init();
+        ModRecipes.init();
         registerAllCrafting();
         registerAllSmelting();
 
