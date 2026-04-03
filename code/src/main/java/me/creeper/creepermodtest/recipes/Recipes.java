@@ -1,9 +1,8 @@
 package me.creeper.creepermodtest.recipes;
 
 import me.creeper.creepermodtest.blocks.RegisterBlocks;
-import me.creeper.creepermodtest.items.RegisterItems;
+import me.creeper.creepermodtest.items.Items;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -14,15 +13,15 @@ import java.util.List;
 public class Recipes {
 
     public static List<ItemStack> mallirusOutputs = new ArrayList<>(Arrays.asList(
-            new ItemStack(Items.experience_bottle, 8),
-            new ItemStack(Items.diamond, 1),
-            new ItemStack(Items.ender_pearl, 4),
-            new ItemStack(Items.skull, 1),
-            new ItemStack(Items.blaze_rod, 8),
+            new ItemStack(net.minecraft.init.Items.experience_bottle, 8),
+            new ItemStack(net.minecraft.init.Items.diamond, 1),
+            new ItemStack(net.minecraft.init.Items.ender_pearl, 4),
+            new ItemStack(net.minecraft.init.Items.skull, 1),
+            new ItemStack(net.minecraft.init.Items.blaze_rod, 8),
             new ItemStack(Blocks.sponge, 2),
-            new ItemStack(Items.saddle, 1),
-            new ItemStack(Items.name_tag, 1),
-            new ItemStack(Items.golden_apple, 1, 1)
+            new ItemStack(net.minecraft.init.Items.saddle, 1),
+            new ItemStack(net.minecraft.init.Items.name_tag, 1),
+            new ItemStack(net.minecraft.init.Items.golden_apple, 1, 1)
     ));
 
     public static List<RecipeData> craftingRecipes = new ArrayList<>();
@@ -63,22 +62,22 @@ public class Recipes {
         // =-=-=-=-=-=-=-=-=-=-=-=-=-=-= \\
         // Cheese
         addShapeless(
-                new ItemStack(RegisterItems.itemCheese, 8),
+                new ItemStack(Items.itemCheese, 8),
 
-                new ItemStack(Items.milk_bucket),
-                new ItemStack(Items.milk_bucket),
-                new ItemStack(Items.milk_bucket),
-                new ItemStack(Items.milk_bucket),
-                new ItemStack(Items.milk_bucket),
-                new ItemStack(Items.milk_bucket),
-                new ItemStack(Items.milk_bucket),
-                new ItemStack(Items.milk_bucket),
-                new ItemStack(Items.sugar)
+                new ItemStack(net.minecraft.init.Items.milk_bucket),
+                new ItemStack(net.minecraft.init.Items.milk_bucket),
+                new ItemStack(net.minecraft.init.Items.milk_bucket),
+                new ItemStack(net.minecraft.init.Items.milk_bucket),
+                new ItemStack(net.minecraft.init.Items.milk_bucket),
+                new ItemStack(net.minecraft.init.Items.milk_bucket),
+                new ItemStack(net.minecraft.init.Items.milk_bucket),
+                new ItemStack(net.minecraft.init.Items.milk_bucket),
+                new ItemStack(net.minecraft.init.Items.sugar)
         );
         // Grilled Cheese
         addSmelting(
-                new ItemStack(RegisterItems.itemGrilledCheese),
-                new ItemStack(RegisterItems.itemCheese),
+                new ItemStack(Items.itemGrilledCheese),
+                new ItemStack(Items.itemCheese),
                 1.0F
         );
 
@@ -89,7 +88,7 @@ public class Recipes {
         // =-=-=-=-=-=-=-=-=-=-=-=-=-=-= \\
         // Mallirus Gem
         addSmelting(
-                new ItemStack(RegisterItems.itemMallirusGem),
+                new ItemStack(Items.itemMallirusGem),
                 new ItemStack(RegisterBlocks.blockMallirusOre),
                 4.0F
         );
@@ -101,42 +100,42 @@ public class Recipes {
         // =-=-=-=-=-=-=-=-=-=-=-=-=-=-= \\
         // Netherstar
         addShaped(
-                new ItemStack(Items.nether_star),
+                new ItemStack(net.minecraft.init.Items.nether_star),
 
                 "WWW",
                 "SSS",
                 "DSB",
 
-                'W', new ItemStack(Items.skull, 1, 1), // 1x Wither skull
+                'W', new ItemStack(net.minecraft.init.Items.skull, 1, 1), // 1x Wither skull
                 'S', new ItemStack(Blocks.soul_sand),
-                'D', new ItemStack(Items.diamond_sword),
-                'B', new ItemStack(Items.bow)
+                'D', new ItemStack(net.minecraft.init.Items.diamond_sword),
+                'B', new ItemStack(net.minecraft.init.Items.bow)
 
         );
         // Skeleton Skull
         addShaped(
-                new ItemStack(Items.skull, 1, 0), // 1x Skeleton skull
+                new ItemStack(net.minecraft.init.Items.skull, 1, 0), // 1x Skeleton skull
 
                 "MBM",
                 "BBB",
                 "MBM",
 
-                'M', new ItemStack(Items.dye, 1, 15), // 1x Bone meal
-                'B', new ItemStack(Items.bone)
+                'M', new ItemStack(net.minecraft.init.Items.dye, 1, 15), // 1x Bone meal
+                'B', new ItemStack(net.minecraft.init.Items.bone)
         );
         // Wither Skull
         addShapeless(
-                new ItemStack(Items.skull, 1, 1), // 1x Wither skull
+                new ItemStack(net.minecraft.init.Items.skull, 1, 1), // 1x Wither skull
 
-                new ItemStack(Items.skull, 1, 0),
-                new ItemStack(Items.coal),
-                new ItemStack(Items.coal),
-                new ItemStack(Items.coal),
-                new ItemStack(Items.coal),
-                new ItemStack(Items.coal),
-                new ItemStack(Items.coal),
-                new ItemStack(Items.coal),
-                new ItemStack(Items.coal)
+                new ItemStack(net.minecraft.init.Items.skull, 1, 0),
+                new ItemStack(net.minecraft.init.Items.coal),
+                new ItemStack(net.minecraft.init.Items.coal),
+                new ItemStack(net.minecraft.init.Items.coal),
+                new ItemStack(net.minecraft.init.Items.coal),
+                new ItemStack(net.minecraft.init.Items.coal),
+                new ItemStack(net.minecraft.init.Items.coal),
+                new ItemStack(net.minecraft.init.Items.coal),
+                new ItemStack(net.minecraft.init.Items.coal)
         );
 
 
@@ -146,37 +145,37 @@ public class Recipes {
         // =-=-=-=-=-=-=-=-=-=-=-=-=-=-= \\
         // Iron Plate
         addShapeless(
-                new ItemStack(RegisterItems.itemIronPlate),
+                new ItemStack(Items.itemIronPlate),
 
-                new ItemStack(Items.iron_ingot),
-                new ItemStack(RegisterItems.itemStoneHammer, 1, OreDictionary.WILDCARD_VALUE)
+                new ItemStack(net.minecraft.init.Items.iron_ingot),
+                new ItemStack(Items.itemStoneHammer, 1, OreDictionary.WILDCARD_VALUE)
         );
         addShapeless(
-                new ItemStack(RegisterItems.itemIronPlate),
+                new ItemStack(Items.itemIronPlate),
 
-                new ItemStack(Items.iron_ingot),
-                new ItemStack(RegisterItems.itemIronHammer, 1, OreDictionary.WILDCARD_VALUE)
+                new ItemStack(net.minecraft.init.Items.iron_ingot),
+                new ItemStack(Items.itemIronHammer, 1, OreDictionary.WILDCARD_VALUE)
         );
         addShapeless(
-                new ItemStack(RegisterItems.itemIronPlate),
+                new ItemStack(Items.itemIronPlate),
 
-                new ItemStack(Items.iron_ingot),
-                new ItemStack(RegisterItems.itemDiamondHammer, 1, OreDictionary.WILDCARD_VALUE)
+                new ItemStack(net.minecraft.init.Items.iron_ingot),
+                new ItemStack(Items.itemDiamondHammer, 1, OreDictionary.WILDCARD_VALUE)
 
         );
         // Diamond Plate
         addShapeless(
-                new ItemStack(RegisterItems.itemDiamondPlate),
+                new ItemStack(Items.itemDiamondPlate),
 
-                new ItemStack(Items.diamond),
-                new ItemStack(RegisterItems.itemIronHammer, 1, OreDictionary.WILDCARD_VALUE)
+                new ItemStack(net.minecraft.init.Items.diamond),
+                new ItemStack(Items.itemIronHammer, 1, OreDictionary.WILDCARD_VALUE)
 
         );
         addShapeless(
-                new ItemStack(RegisterItems.itemDiamondPlate),
+                new ItemStack(Items.itemDiamondPlate),
 
-                new ItemStack(Items.diamond),
-                new ItemStack(RegisterItems.itemDiamondHammer, 1, OreDictionary.WILDCARD_VALUE)
+                new ItemStack(net.minecraft.init.Items.diamond),
+                new ItemStack(Items.itemDiamondHammer, 1, OreDictionary.WILDCARD_VALUE)
 
         );
 
@@ -185,65 +184,65 @@ public class Recipes {
         // =-=-=-=-=-=-=-=-=-=-=-=-=-=-= \\
         // Stone Hammer
         addShaped(
-                new ItemStack(RegisterItems.itemStoneHammer),
+                new ItemStack(Items.itemStoneHammer),
 
                 "SSS",
                 "SWS",
                 " W ",
 
                 'S', new ItemStack(Blocks.cobblestone),
-                'W', new ItemStack(Items.stick)
+                'W', new ItemStack(net.minecraft.init.Items.stick)
 
         );
         // Iron Hammer
         addShaped(
-                new ItemStack(RegisterItems.itemIronHammer),
+                new ItemStack(Items.itemIronHammer),
 
                 "III",
                 "ISI",
                 " S ",
 
-                'I', new ItemStack(RegisterItems.itemIronPlate),
-                'S', new ItemStack(Items.stick)
+                'I', new ItemStack(Items.itemIronPlate),
+                'S', new ItemStack(net.minecraft.init.Items.stick)
         );
         // Diamond Hammer
         addShaped(
-                new ItemStack(RegisterItems.itemDiamondHammer),
+                new ItemStack(Items.itemDiamondHammer),
 
                 "DDD",
                 "DSD",
                 " S ",
 
-                'D', new ItemStack(RegisterItems.itemDiamondPlate),
-                'S', new ItemStack(Items.stick)
+                'D', new ItemStack(Items.itemDiamondPlate),
+                'S', new ItemStack(net.minecraft.init.Items.stick)
         );
         // Horse armors
         addShaped(
-                new ItemStack(Items.iron_horse_armor),
+                new ItemStack(net.minecraft.init.Items.iron_horse_armor),
 
                 "  I",
                 "III",
                 "I I",
 
-                'I', new ItemStack(Items.iron_ingot)
+                'I', new ItemStack(net.minecraft.init.Items.iron_ingot)
         );
         addShaped(
-                new ItemStack(Items.golden_horse_armor),
+                new ItemStack(net.minecraft.init.Items.golden_horse_armor),
 
                 "  G",
                 "GGG",
                 "G G",
 
-                'G', new ItemStack(Items.gold_ingot)
+                'G', new ItemStack(net.minecraft.init.Items.gold_ingot)
         );
         addShaped(
-                new ItemStack(Items.diamond_horse_armor),
+                new ItemStack(net.minecraft.init.Items.diamond_horse_armor),
 
                 "  D",
                 "DDD",
                 "D D",
 
-                'D', new ItemStack(Items.diamond)
+                'D', new ItemStack(net.minecraft.init.Items.diamond)
         );
 
 
@@ -251,7 +250,7 @@ public class Recipes {
         // =-=-=-=-=-=-=-=-=-=-=-=-=-=-= \\
         // Mallirus Crafting             \\
         // =-=-=-=-=-=-=-=-=-=-=-=-=-=-= \\
-        ItemStack mallirusGemStack = new ItemStack(RegisterItems.itemMallirusGem);
+        ItemStack mallirusGemStack = new ItemStack(Items.itemMallirusGem);
         for (int i = 1; i <= 9; i++) { // 1-9
             ItemStack[] mallirusGems = new ItemStack[i];
             Arrays.fill(mallirusGems, mallirusGemStack);

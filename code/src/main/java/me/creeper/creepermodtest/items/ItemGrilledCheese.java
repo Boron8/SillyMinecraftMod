@@ -8,8 +8,12 @@ public class ItemGrilledCheese extends ItemFood {
     static float saturation = 0.5F;
 
     public ItemGrilledCheese() {
+        // hunger saturation can_be_eaten_by_wolf
         super(food, saturation, false);
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
         this.setMaxStackSize(32);
+
+        this.setUnlocalizedName("itemGrilledCheese");
+        this.setTextureName(ExampleMod.MODID+":item_grilled_cheese");
     }
 }

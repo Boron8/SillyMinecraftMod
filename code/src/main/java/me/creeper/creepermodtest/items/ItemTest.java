@@ -10,6 +10,9 @@ public class ItemTest extends Item {
     public ItemTest() {
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
         this.setMaxStackSize(64);
+
+        this.setUnlocalizedName("itemTest");
+        this.setTextureName(ExampleMod.MODID+":item_test");
     }
 
     public boolean onItemUse(ItemStack item, EntityPlayer player, World world, int p_77648_4_, int p_77648_5_, int p_77648_6_, int p_77648_7_, float p_77648_8_, float p_77648_9_, float p_77648_10_) {

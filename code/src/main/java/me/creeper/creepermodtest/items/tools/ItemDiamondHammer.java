@@ -13,7 +13,7 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
 
-public class DiamondHammer extends ItemPickaxe {
+public class ItemDiamondHammer extends ItemPickaxe {
     public static boolean isBreaking = false;
 
     // Same as default diamond (EMERALD internally), but *9 maxUses
@@ -26,11 +26,12 @@ public class DiamondHammer extends ItemPickaxe {
             10
     );
 
-    public DiamondHammer() {
+    public ItemDiamondHammer() {
         super(DIAMOND_HAMMER);
+        this.setCreativeTab(ExampleMod.tabCreepermodtest);
+
         this.setUnlocalizedName("diamondHammer");
         this.setTextureName(ExampleMod.MODID+":item_diamond_hammer");
-        this.setCreativeTab(ExampleMod.tabCreepermodtest);
     }
 
     @Override

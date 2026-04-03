@@ -13,7 +13,7 @@ import me.creeper.creepermodtest.generation.RegisterOreGeneration;
 import me.creeper.creepermodtest.handlers.CounterHandler;
 import me.creeper.creepermodtest.handlers.DetonatorHeldHandler;
 import me.creeper.creepermodtest.handlers.KeybindingsHandler;
-import me.creeper.creepermodtest.items.RegisterItems;
+import me.creeper.creepermodtest.items.Items;
 import me.creeper.creepermodtest.recipes.RegisterRecipes;
 import me.creeper.creepermodtest.renderers.TestRenderer;
 import me.creeper.creepermodtest.utils.Counter;
@@ -91,7 +91,7 @@ public class ExampleMod {
             e.printStackTrace();
         }
 
-        RegisterItems.RegisterItemsHandler.registerAllItems();
+        Items.registerItems();
         RegisterBlocks.RegisterBlocksHandler.registerAllBlocks();
 
         ExampleMod.debugLog("PreInit done.", true);
@@ -155,7 +155,7 @@ public class ExampleMod {
     public static CreativeTabs tabCreepermodtest = new CreativeTabs("tabCreepermodtest") {
         @Override
         public Item getTabIconItem() {
-            return new ItemStack(RegisterItems.itemCheese).getItem();
+            return new ItemStack(Items.itemCheese).getItem();
         }
     };
 

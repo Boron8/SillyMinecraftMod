@@ -5,16 +5,16 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public class itemIronHammer extends Item {
-    public itemIronHammer() {
+public class ItemStoneHammer extends Item {
+    public ItemStoneHammer() {
         super();
         this.setMaxStackSize(1);
-        this.setMaxDamage(128);
-
-        this.setUnlocalizedName("ironHammer");
-        this.setTextureName(ExampleMod.MODID+":item_iron_hammer");
+        this.setMaxDamage(64);
 
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
+
+        this.setUnlocalizedName("stoneHammer");
+        this.setTextureName(ExampleMod.MODID+":item_stone_hammer");
     }
 
     @Override
