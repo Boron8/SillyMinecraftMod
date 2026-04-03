@@ -9,6 +9,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import me.creeper.creepermodtest.blocks.ModBlocks;
 import me.creeper.creepermodtest.commands.RegisterCommands;
+import me.creeper.creepermodtest.config.MainConfig;
 import me.creeper.creepermodtest.generation.RegisterOreGeneration;
 import me.creeper.creepermodtest.handlers.CounterHandler;
 import me.creeper.creepermodtest.handlers.DetonatorHeldHandler;
@@ -27,9 +28,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.config.Configuration;
 
-import java.io.File;
 import java.util.Random;
 
 import static me.creeper.creepermodtest.keyBindings.RegisterKeybindings.registerAllKeybindings;
@@ -48,8 +47,9 @@ public class ExampleMod {
     public static final String MODID           = "creepermodtest";
     public static final String VERSION         = "0.0.2-" + RELEASE_TYPE + "-" + RELEASE_VERSION;
 
-    public static boolean debug_print = true;
-    public static File configFile;
+    private static MainConfig mainConfig;
+    public  static MainConfig getMainConfig() { return mainConfig; }
+
 
     private static final Counter globalServerCounter = new Counter();
     private static final Counter globalClientCounter = new Counter();
@@ -62,6 +62,7 @@ public class ExampleMod {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         ExampleMod.debugLog("PreInit...", true);
+
         //1
         //Item/block init and registering
         //Config handling
@@ -70,26 +71,7 @@ public class ExampleMod {
             mc = Minecraft.getMinecraft();
         }
 
-
-        configFile = event.getSuggestedConfigurationFile();
-
-
-        Configuration config = new Configuration(configFile);
-        try {
-            config.load();
-
-            debug_print = config.getBoolean("debug_print", Configuration.CATEGORY_GENERAL, false, "Enable debug print mode");
-
-            if (config.hasChanged()) {
-                config.save();
-            }
-        } catch (Exception e) {
-            FMLLog.severe("There was a problem loading the configuration file, using default settings...");
-            FMLLog.info("debug_print Will be force trued");
-            debug_print = true;
-
-            e.printStackTrace();
-        }
+        mainConfig = new MainConfig(event.getSuggestedConfigurationFile());
 
         ModItems.registerItems();
         ModBlocks.registerAllBlocks();
@@ -105,6 +87,7 @@ public class ExampleMod {
         //Proxy, entity, GUI, Packet registering, World generation
         //Recipe registering
         //Custom Renderers
+        //Custom handlers
 
         // Recipes
         RegisterRecipes.registerRecipes();
@@ -123,6 +106,8 @@ public class ExampleMod {
             // Handlers (Client)
             FMLCommonHandler.instance().bus().register(new KeybindingsHandler());
             FMLCommonHandler.instance().bus().register(new DetonatorHeldHandler());
+        } else {
+            // Handlers (Server)
         }
 
         // Handlers (Client+Server)
@@ -145,9 +130,10 @@ public class ExampleMod {
         ExampleMod.debugLog("ServerStart...");
         MinecraftServer server = MinecraftServer.getServer();
         ICommandManager command = server.getCommandManager();
-        ServerCommandManager manager = (ServerCommandManager) command;
+        ServerCommandManager manager = (ServerCommandManager)command;
 
         RegisterCommands.RegisterCommandsHandler.registerAllCommands(manager);
+
         ExampleMod.debugLog("ServerStart done.");
     }
 
@@ -161,12 +147,12 @@ public class ExampleMod {
 
 
     public static void debugLog(String msg, boolean ignore) {
-        if (debug_print || ignore) {
+        if (mainConfig == null || Boolean.TRUE.equals(mainConfig.debug_print) || ignore) {
             FMLLog.info("[CMT DBG]: " + msg);
         }
     }
     public static void debugLog(String msg) {
-        ExampleMod.debugLog(msg, false);
+        ExampleMod.debugLog(msg,  false);
     }
 
     public static Counter getServerCounter() {
