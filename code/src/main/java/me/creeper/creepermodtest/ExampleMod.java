@@ -107,7 +107,7 @@ public class ExampleMod {
         //Custom Renderers
 
         // Recipes
-        RegisterRecipes.RegisterRecipesHandler.registerAllRecipes();
+        RegisterRecipes.registerRecipes();
 
         // World Gen
         RegisterOreGeneration.RegisterOreGenerationHandler.registerAllGeneration();
