@@ -35,6 +35,8 @@ commands.testtest.playerNotFound=Den spelaren hittades inte
 #tutorial
 #version
 command.version.usage=/version
+#licenses
+command.licenses.usage=/licenses {dep}
 
 
 

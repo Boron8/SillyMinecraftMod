@@ -13,6 +13,9 @@ buildscript {
             name = "jitpack"
             url = "https://jitpack.io"
         }
+        flatDir {
+            dirs 'libs'
+        }
     }
     dependencies {
         classpath ('com.github.GTNewHorizons:ForgeGradle:1.2.11') {
@@ -46,6 +49,8 @@ dependencies {
     // for more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
+    compile "org.luaj:luaj-jse:3.0.2"
 }
 
 processResources
@@ -81,6 +86,9 @@ repositories {
     maven {
         name = "jitpack"
         url = "https://jitpack.io"
+    }
+    flatDir {
+        dirs 'libs'
     }
 }
 

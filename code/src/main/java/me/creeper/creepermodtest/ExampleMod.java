@@ -9,12 +9,15 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import me.creeper.creepermodtest.blocks.ModBlocks;
 import me.creeper.creepermodtest.commands.RegisterCommands;
+import me.creeper.creepermodtest.computers.LuaSandbox;
+import me.creeper.creepermodtest.computers.chat.ChatHandler;
 import me.creeper.creepermodtest.config.MainConfig;
 import me.creeper.creepermodtest.generation.RegisterOreGeneration;
 import me.creeper.creepermodtest.handlers.CounterHandler;
 import me.creeper.creepermodtest.handlers.DetonatorHeldHandler;
 import me.creeper.creepermodtest.handlers.KeybindingsHandler;
 import me.creeper.creepermodtest.items.ModItems;
+import me.creeper.creepermodtest.licenseManager.LicenseLoader;
 import me.creeper.creepermodtest.recipes.RegisterRecipes;
 import me.creeper.creepermodtest.renderers.TestRenderer;
 import me.creeper.creepermodtest.utils.Counter;
@@ -27,10 +30,12 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
+import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
 
 import java.util.Random;
 
+import static me.creeper.creepermodtest.commands.RegisterCommands.RegisterCommandsHandler.registerAllCommandsClient;
 import static me.creeper.creepermodtest.keyBindings.RegisterKeybindings.registerAllKeybindings;
 
 @Mod(modid = ExampleMod.MODID, version = ExampleMod.VERSION)
@@ -59,6 +64,8 @@ public class ExampleMod {
     @SideOnly(Side.CLIENT)
     public static Minecraft mc;
 
+    public static LuaSandbox luaSandbox;
+
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         ExampleMod.debugLog("PreInit...", true);
@@ -71,7 +78,10 @@ public class ExampleMod {
             mc = Minecraft.getMinecraft();
         }
 
+        LicenseLoader.loadLicenses();
+
         mainConfig = new MainConfig(event.getSuggestedConfigurationFile());
+        mainConfig.load();
 
         ModItems.registerItems();
         ModBlocks.registerAllBlocks();
@@ -106,12 +116,18 @@ public class ExampleMod {
             // Handlers (Client)
             FMLCommonHandler.instance().bus().register(new KeybindingsHandler());
             FMLCommonHandler.instance().bus().register(new DetonatorHeldHandler());
+
+            // Client Commands
+            registerAllCommandsClient(ClientCommandHandler.instance);
         } else {
             // Handlers (Server)
         }
 
         // Handlers (Client+Server)
         FMLCommonHandler.instance().bus().register(new CounterHandler());
+        MinecraftForge.EVENT_BUS.register(new ChatHandler());
+
+
 
         ExampleMod.debugLog("Init done.");
     }
@@ -134,6 +150,10 @@ public class ExampleMod {
 
         RegisterCommands.RegisterCommandsHandler.registerAllCommands(manager);
 
+        if (getMainConfig().computers_enabled) {
+            luaSandbox = new LuaSandbox();
+        }
+
         ExampleMod.debugLog("ServerStart done.");
     }
 
@@ -152,7 +172,7 @@ public class ExampleMod {
         }
     }
     public static void debugLog(String msg) {
-        ExampleMod.debugLog(msg,  false);
+        ExampleMod.debugLog(msg, false);
     }
 
     public static Counter getServerCounter() {

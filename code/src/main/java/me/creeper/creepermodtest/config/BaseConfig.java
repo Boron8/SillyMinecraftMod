@@ -21,7 +21,7 @@ public abstract class BaseConfig {
 
 
 
-    private void load() {
+    public void load() {
         try {
             configuration.load();
             loadValues();
