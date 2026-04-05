@@ -27,7 +27,7 @@ Prio: 1-10
 | Plate Textures    | NO  |  2   | Textures for Plates                  |
 | Detonator Texture | NO  |  3   | Texture for the detonator            |
 | Hammer Recipes    | YES |  6   | Fix recipes using hammers            |
-| Tutorial Cleanup  | NO  |  6   | Cleanup tutorial pages code          |
+| Tutorial Cleanup  | YES |  6   | Cleanup tutorial pages code          |
 | Use debug_print   | YES |  8   | Use debug print more                 |
 | ENERGY            | No  |  1   | Cables, Machines, etc                |
 | ExampleMod.java   | No  |  3   | Rename ExampleMod.java file          |
@@ -35,4 +35,5 @@ Prio: 1-10
 | Mixins            | YES |  7   | Add mixin support                    |
 | Fix mcmod.info    | YES |  6   | Fix mcmod.info things                |
 | OreDict           | YES |  4   | Add OreDict for blocks/items         |
+| Tutorial JSON     | No  |  4   | Make tutorial use JSON               |
 

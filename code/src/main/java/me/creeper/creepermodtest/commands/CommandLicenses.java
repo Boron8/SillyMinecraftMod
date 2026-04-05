@@ -13,19 +13,13 @@ import java.util.*;
 public class CommandLicenses implements ICommand {
 
     @Override
-    public String getCommandName() {
-        return "licenses";
-    }
+    public String getCommandName() { return "licenses"; }
 
     @Override
-    public String getCommandUsage(ICommandSender sender) {
-        return "command.licenses.usage";
-    }
+    public String getCommandUsage(ICommandSender sender) { return "command.licenses.usage"; }
 
     @Override
-    public List getCommandAliases() {
-        return Collections.emptyList();
-    }
+    public List getCommandAliases() { return Collections.emptyList(); }
 
     @Override
     public void processCommand(ICommandSender sender, String[] args) {
@@ -47,9 +41,6 @@ public class CommandLicenses implements ICommand {
                 licenseText = LicenseLoader.licensesTexts.get(idx);
             } else {
                 int idx = LicenseLoader.licensesFilenames.indexOf(args[0]);
-                System.out.println("User  '" + args[0] + "'");
-                System.out.println("Idx   '" + idx + "'");
-                System.out.println("Real 0'" + LicenseLoader.licensesFilenames.get(0) + "'");
                 if (idx == -1) { licenseNotFound(sender, licenseName); return; }
                 licenseText = LicenseLoader.licensesTexts.get(idx);
             }
@@ -64,9 +55,7 @@ public class CommandLicenses implements ICommand {
     }
 
     @Override
-    public boolean canCommandSenderUseCommand(ICommandSender sender) {
-        return true;
-    }
+    public boolean canCommandSenderUseCommand(ICommandSender sender) { return true; }
 
     @Override
     public List addTabCompletionOptions(ICommandSender sender, String[] args) {
@@ -76,14 +65,11 @@ public class CommandLicenses implements ICommand {
     }
 
     @Override
-    public boolean isUsernameIndex(String[] p_82358_1_, int p_82358_2_) {
-        return false;
-    }
+    public boolean isUsernameIndex(String[] args, int p_82358_2_) { return false; }
 
     @Override
-    public int compareTo(Object o) {
-        return 0;
-    }
+    public int compareTo(Object o) { return 0; }
+
 
 
     private static void licenseNotFound(ICommandSender sender, String licenseName) {

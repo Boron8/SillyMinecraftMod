@@ -118,7 +118,7 @@ public class ExampleMod {
             FMLCommonHandler.instance().bus().register(new DetonatorHeldHandler());
 
             // Client Commands
-            registerAllCommandsClient(ClientCommandHandler.instance);
+            registerAllCommandsClient();
         } else {
             // Handlers (Server)
         }
@@ -144,11 +144,8 @@ public class ExampleMod {
     @EventHandler
     public void onServerStart(FMLServerStartingEvent event) {
         ExampleMod.debugLog("ServerStart...");
-        MinecraftServer server = MinecraftServer.getServer();
-        ICommandManager command = server.getCommandManager();
-        ServerCommandManager manager = (ServerCommandManager)command;
 
-        RegisterCommands.RegisterCommandsHandler.registerAllCommands(manager);
+        RegisterCommands.RegisterCommandsHandler.registerAllCommands();
 
         if (getMainConfig().computers_enabled) {
             luaSandbox = new LuaSandbox();
