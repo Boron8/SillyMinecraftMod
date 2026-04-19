@@ -4,7 +4,9 @@
   "package": "me.creeper.creepermodtest.mixin",
   "refmap": "mixins.creepermodtest.refmap.json",
   "compatibilityLevel": "JAVA_8",
-  "mixins": [],
+  "mixins": [
+    "MixinMinecraftServer"
+  ],
   "client": [
     "MixinPiston"
   ],

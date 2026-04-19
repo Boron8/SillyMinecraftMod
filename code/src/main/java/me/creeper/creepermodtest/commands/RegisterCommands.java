@@ -12,6 +12,10 @@ public class RegisterCommands {
             manager.registerCommand(new TestTestCommand());
         }
 
+        public static void registerCommandTps(ServerCommandManager manager) {
+            manager.registerCommand(new CommandTps());
+        }
+
         public static void registerCommandTutorial() {
             ClientCommandHandler.instance.registerCommand(new CommandTutorial());
         }
@@ -31,6 +35,7 @@ public class RegisterCommands {
             ServerCommandManager manager = ((ServerCommandManager)MinecraftServer.getServer().getCommandManager());
 
             registerCommandTestTest(manager);
+            registerCommandTps(manager);
 
             ExampleMod.debugLog("Registering commands done.");
         }

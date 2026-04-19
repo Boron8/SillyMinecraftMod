@@ -21,6 +21,7 @@ import me.creeper.creepermodtest.licenseManager.LicenseLoader;
 import me.creeper.creepermodtest.multiblocks.registerMultiblocks;
 import me.creeper.creepermodtest.recipes.RegisterRecipes;
 import me.creeper.creepermodtest.renderers.TestRenderer;
+import me.creeper.creepermodtest.utils.CTMArray;
 import me.creeper.creepermodtest.utils.Counter;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -35,7 +36,6 @@ import java.util.Random;
 
 import static me.creeper.creepermodtest.commands.RegisterCommands.RegisterCommandsHandler.registerAllCommandsClient;
 import static me.creeper.creepermodtest.keyBindings.RegisterKeybindings.registerAllKeybindings;
-import static me.creeper.creepermodtest.multiblocks.registerMultiblocks.registerAllMultiBlocks;
 
 @Mod(modid = ExampleMod.MODID, version = ExampleMod.VERSION)
 public class ExampleMod {
@@ -64,6 +64,8 @@ public class ExampleMod {
     public static Minecraft mc;
 
     public static LuaSandbox luaSandbox;
+
+    public static CTMArray<Long> tickTimesNS = new CTMArray<>(100);
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
