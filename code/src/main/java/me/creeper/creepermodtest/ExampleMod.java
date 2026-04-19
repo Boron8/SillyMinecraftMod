@@ -18,6 +18,7 @@ import me.creeper.creepermodtest.handlers.DetonatorHeldHandler;
 import me.creeper.creepermodtest.handlers.KeybindingsHandler;
 import me.creeper.creepermodtest.items.ModItems;
 import me.creeper.creepermodtest.licenseManager.LicenseLoader;
+import me.creeper.creepermodtest.multiblocks.registerMultiblocks;
 import me.creeper.creepermodtest.recipes.RegisterRecipes;
 import me.creeper.creepermodtest.renderers.TestRenderer;
 import me.creeper.creepermodtest.utils.Counter;
@@ -25,18 +26,16 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import net.minecraft.client.Minecraft;
-import net.minecraft.command.*;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.server.MinecraftServer;
-import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
 
 import java.util.Random;
 
 import static me.creeper.creepermodtest.commands.RegisterCommands.RegisterCommandsHandler.registerAllCommandsClient;
 import static me.creeper.creepermodtest.keyBindings.RegisterKeybindings.registerAllKeybindings;
+import static me.creeper.creepermodtest.multiblocks.registerMultiblocks.registerAllMultiBlocks;
 
 @Mod(modid = ExampleMod.MODID, version = ExampleMod.VERSION)
 public class ExampleMod {
@@ -85,6 +84,8 @@ public class ExampleMod {
 
         ModItems.registerItems();
         ModBlocks.registerAllBlocks();
+
+        registerMultiblocks.registerAllMultiBlocks();
 
         ExampleMod.debugLog("PreInit done.", true);
     }
@@ -172,10 +173,6 @@ public class ExampleMod {
         ExampleMod.debugLog(msg, false);
     }
 
-    public static Counter getServerCounter() {
-        return globalServerCounter;
-    }
-    public static Counter getClientCounter() {
-        return globalClientCounter;
-    }
+    public static Counter getServerCounter() { return globalServerCounter; }
+    public static Counter getClientCounter() { return globalClientCounter; }
 }

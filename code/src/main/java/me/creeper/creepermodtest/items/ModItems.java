@@ -30,6 +30,7 @@ public class ModItems {
     public static Item itemMallirusChestplate;
     public static Item itemMallirusLeggings;
     public static Item itemMallirusBoots;
+    public static Item itemExplodingBallSummoner;
 
     public static void registerItems() {
         ExampleMod.debugLog("Registering items...");
@@ -44,6 +45,8 @@ public class ModItems {
         itemIronHammer = registerItem(new ItemIronHammer());
         itemDiamondPlate = registerItem(new ItemDiamondPlate());
         itemDetonator = registerItem(new ItemDetonator());
+        itemExplodingBallSummoner = registerItem(new ItemExplodingBallSummoner());
+
 
         itemMallirusHelmet = new MallirusArmor(MallirusArmor.MALLIRUS_ARMOR_MATERIAL, 0, 0);
         itemMallirusChestplate = new MallirusArmor(MallirusArmor.MALLIRUS_ARMOR_MATERIAL, 0, 1);
@@ -53,6 +56,7 @@ public class ModItems {
         GameRegistry.registerItem(itemMallirusChestplate, "mallirusChestplate");
         GameRegistry.registerItem(itemMallirusLeggings, "mallirusLeggings");
         GameRegistry.registerItem(itemMallirusBoots, "mallirusBoots");
+
 
         OreDictionary.registerOre("listAllfood", itemCheese);   // Pams standards
         OreDictionary.registerOre("listAllmilk", itemCheese);   // Pams standards

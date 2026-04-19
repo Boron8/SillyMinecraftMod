@@ -2,20 +2,20 @@ package me.creeper.creepermodtest.handlers;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
-import me.creeper.creepermodtest.utils.Counter;
+import me.creeper.creepermodtest.ExampleMod;
 
 public class CounterHandler {
     @SubscribeEvent
     public void onServerTick(TickEvent.ServerTickEvent event) {
         if (event.phase == TickEvent.Phase.END) {
-            Counter.getCounter().increment();
+            ExampleMod.getServerCounter().increment();
         }
     }
 
     @SubscribeEvent
     public void onClientTick(TickEvent.ClientTickEvent event) {
         if (event.phase == TickEvent.Phase.END) {
-            Counter.getCounter().increment();
+            ExampleMod.getClientCounter().increment();
         }
     }
 }
