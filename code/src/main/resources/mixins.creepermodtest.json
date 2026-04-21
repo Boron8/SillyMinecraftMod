@@ -8,6 +8,8 @@
     "MixinMinecraftServer"
   ],
   "client": [
+    "GuiAccessor",
+    "MixinGuiMainMenu",
     "MixinPiston"
   ],
   "server": []

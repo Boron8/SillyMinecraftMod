@@ -1,10 +1,12 @@
 package me.creeper.creepermodtest.multiblocks.testMulti;
 
 import me.creeper.creepermodtest.ExampleMod;
+import me.creeper.creepermodtest.handlers.GuiHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
@@ -41,11 +43,11 @@ public class BlockTestMultiController extends BlockContainer {
 
     @Override
     public void breakBlock(World world, int x, int y, int z, Block block, int meta)  {
-        super.breakBlock(world, x, y, z, block, meta);
         TileEntity te = world.getTileEntity(x, y, z);
         if (te instanceof  TileEntityTestMultiController) {
             ((TileEntityTestMultiController) te).invalidateStructure();
         }
+        super.breakBlock(world, x, y, z, block, meta);
     }
 
     @Override
@@ -56,5 +58,11 @@ public class BlockTestMultiController extends BlockContainer {
         }
     }
 
-
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ) {
+        if (!world.isRemote) {
+            player.openGui(ExampleMod.getInstance(), GuiHandler.TEST_MULTI_ID, world, x, y, z);
+            // register + fix, Bye,
+        }
+        return true;
+    }
 }

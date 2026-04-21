@@ -21,6 +21,7 @@ import me.creeper.creepermodtest.licenseManager.LicenseLoader;
 import me.creeper.creepermodtest.multiblocks.registerMultiblocks;
 import me.creeper.creepermodtest.recipes.RegisterRecipes;
 import me.creeper.creepermodtest.renderers.TestRenderer;
+import me.creeper.creepermodtest.screens.ModGuis;
 import me.creeper.creepermodtest.utils.CTMArray;
 import me.creeper.creepermodtest.utils.Counter;
 import cpw.mods.fml.common.Mod;
@@ -67,9 +68,15 @@ public class ExampleMod {
 
     public static CTMArray<Long> tickTimesNS = new CTMArray<>(100);
 
+    private static ExampleMod instance;
+
+    public static ExampleMod getInstance() { return instance; }
+
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         ExampleMod.debugLog("PreInit...", true);
+
+        instance = this;
 
         //1
         //Item/block init and registering
@@ -101,6 +108,8 @@ public class ExampleMod {
         //Recipe registering
         //Custom Renderers
         //Custom handlers
+
+        ModGuis.registerAllGuis();
 
         // Recipes
         RegisterRecipes.registerRecipes();
