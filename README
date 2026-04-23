@@ -1,5 +1,5 @@
 # CreeperTestMod (CTM)
-
+### Anything and Everything
 
 <br>
 
@@ -20,20 +20,21 @@
 High prio = Higher priority <br>
 Prio: 1-10
 
-| Name              | Fix | Prio | Description                          |
-|-------------------|:---:|:----:|--------------------------------------|
-| Tutorial Bug      | YES |  0   | Check if Sender is instanceof player |
-| Hammer Textures   | YES |  2   | Textures for Stone/Iron Hammers      |
-| Plate Textures    | NO  |  2   | Textures for Plates                  |
-| Detonator Texture | NO  |  3   | Texture for the detonator            |
-| Hammer Recipes    | YES |  6   | Fix recipes using hammers            |
-| Tutorial Cleanup  | YES |  6   | Cleanup tutorial pages code          |
-| Use debug_print   | YES |  8   | Use debug print more                 |
-| ENERGY            | No  |  1   | Cables, Machines, etc                |
-| ExampleMod.java   | No  |  3   | Rename ExampleMod.java file          |
-| Item magnet       | No  |  4   | Pulls in nearby items                |
-| Mixins            | YES |  7   | Add mixin support                    |
-| Fix mcmod.info    | YES |  6   | Fix mcmod.info things                |
-| OreDict           | YES |  4   | Add OreDict for blocks/items         |
-| Tutorial JSON     | No  |  4   | Make tutorial use JSON               |
+| Name                | Fix | Prio | Description                             |
+|---------------------|:---:|:----:|-----------------------------------------|
+| Tutorial Bug        | YES |  0   | Check if Sender is instanceof player    |
+| Hammer Textures     | YES |  2   | Textures for Stone/Iron Hammers         |
+| Plate Textures      | NO  |  2   | Textures for Plates                     |
+| Detonator Texture   | NO  |  3   | Texture for the detonator               |
+| Hammer Recipes      | YES |  6   | Fix recipes using hammers               |
+| Tutorial Cleanup    | YES |  6   | Cleanup tutorial pages code             |
+| Use debug_print     | YES |  8   | Use debug print more                    |
+| ENERGY              | No  |  1   | Cables, Machines, etc                   |
+| ExampleMod.java     | No  |  3   | Rename ExampleMod.java file             |
+| Item magnet         | No  |  4   | Pulls in nearby items                   |
+| Mixins              | YES |  7   | Add mixin support                       |
+| Fix mcmod.info      | YES |  6   | Fix mcmod.info things                   |
+| OreDict             | YES |  4   | Add OreDict for blocks/items            |
+| Tutorial JSON       | No  |  4   | Make tutorial use JSON                  |
+| Modular multiblocks | No  |  3   | Make the multiblock system more modular |
 

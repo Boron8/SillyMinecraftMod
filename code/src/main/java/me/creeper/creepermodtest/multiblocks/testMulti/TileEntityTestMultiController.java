@@ -1,10 +1,11 @@
 package me.creeper.creepermodtest.multiblocks.testMulti;
 
 import me.creeper.creepermodtest.ExampleMod;
+import me.creeper.creepermodtest.recipes.TestMultiRecipe;
+import me.creeper.creepermodtest.recipes.TestMultiRecipes;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -20,8 +21,27 @@ public class TileEntityTestMultiController extends TileEntity implements IInvent
     private boolean isFormed = false;
 
     public boolean checkStructure() {
-        Block blockAbove = worldObj.getBlock(xCoord, yCoord + 1, zCoord);
-        if (blockAbove == Blocks.stone) {
+        int meta = worldObj.getBlockMetadata(xCoord, yCoord, zCoord);
+        int xOffset = 0;
+        int zOffset = 0;
+        switch (meta) {
+            case 0:
+                zOffset = 1;
+                break;
+            case 1:
+                xOffset = -1;
+                break;
+            case 2:
+                zOffset = -1;
+                break;
+            case 3:
+                xOffset = 1;
+                break;
+        }
+
+        Block blockBehind = worldObj.getBlock(xCoord+xOffset, yCoord, zCoord+zOffset);
+
+        if (blockBehind == Blocks.gold_block) {
             isFormed = true;
             return true;
         } else {
@@ -67,9 +87,7 @@ public class TileEntityTestMultiController extends TileEntity implements IInvent
                 this.markDirty();
             }
         } else if (recipeTime > 0) {
-            // Decrease by 2 | 1 if 1 left
-            if (recipeTime > 1) recipeTime -= 1;
-            recipeTime -= 1;
+            recipeTime = Math.max(0, recipeTime - 2);
 
             markDirty();
         }
@@ -78,41 +96,40 @@ public class TileEntityTestMultiController extends TileEntity implements IInvent
     private boolean canProcessRecipe() {
         if (inventory[0] == null) return false;
 
-        ItemStack result = getRecipeResult(inventory[0]);
-        if (result == null) return false;
+        TestMultiRecipe recipe = getRecipe(inventory[0]);
+        if (recipe == null) return false;
+
+        if (inventory[0].stackSize < recipe.inputAmount) return false;
 
         if (inventory[1] == null) return true;
 
+        ItemStack result = new ItemStack(recipe.outputItem, recipe.outputAmount);
         if (!inventory[1].isItemEqual(result)) return false;
 
-        int combined = inventory[1].stackSize + result.stackSize;
-        return combined <= inventory[1].getMaxStackSize();
+        return inventory[1].stackSize + recipe.outputAmount <= inventory[1].getMaxStackSize();
     }
 
     private void processRecipe() {
         if (!canProcessRecipe()) return;
 
-        ItemStack result = getRecipeResult(inventory[0]);
-        if (result == null) return;
+        TestMultiRecipe recipe = getRecipe(inventory[0]);
+        if (recipe == null) return;
 
-        if (inventory[1] == null) {
-            inventory[1] = result.copy();
-        } else if (inventory[1].isItemEqual(result)){
-            inventory[1].stackSize += result.stackSize;
+        inventory[0].stackSize -= recipe.inputAmount;
+        if (inventory[0].stackSize <= 0) inventory[0] = null;
+
+        if (inventory[1] == null)  {
+            inventory[1] = new ItemStack(recipe.outputItem, recipe.outputAmount);
+        } else {
+            inventory[1].stackSize += recipe.outputAmount;
         }
 
-        inventory[0].stackSize--;
-
-        if (inventory[0].stackSize <= 0) {
-            inventory[0] = null;
-        }
+        this.markDirty();
     }
 
-    private ItemStack getRecipeResult(ItemStack input) {
-        if (input.getItem() == Items.iron_ingot) {
-            return new ItemStack(Items.gold_ingot);
-        }
-        return null;
+    private TestMultiRecipe getRecipe(ItemStack input) {
+        if (input == null) return null;
+        return TestMultiRecipes.recipes.get(input.getItem());
     }
 
 

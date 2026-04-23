@@ -9,6 +9,8 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.IIcon;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
 public class BlockTestMultiController extends BlockContainer {
@@ -33,12 +35,20 @@ public class BlockTestMultiController extends BlockContainer {
     public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase player, ItemStack stack) {
         super.onBlockPlacedBy(world, x, y, z, player, stack);
 
+        int direction = MathHelper.floor_double((double)(player.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+        world.setBlockMetadataWithNotify(x, y, z, direction, 2);
+
         if (world.isRemote) return;
 
         TileEntity te = world.getTileEntity(x, y, z);
         if (te instanceof  TileEntityTestMultiController) {
             ((TileEntityTestMultiController) te).checkStructure();
         }
+    }
+
+    @Override
+    public int onBlockPlaced(World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ, int meta) {
+        return meta;
     }
 
     @Override
@@ -58,6 +68,7 @@ public class BlockTestMultiController extends BlockContainer {
         }
     }
 
+    @Override
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ) {
         if (!world.isRemote) {
             player.openGui(ExampleMod.getInstance(), GuiHandler.TEST_MULTI_ID, world, x, y, z);

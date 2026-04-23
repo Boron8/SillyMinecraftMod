@@ -23,6 +23,8 @@ public class RegisterRecipes {
     public static void registerRecipes() {
         ExampleMod.debugLog("Registering recipes...");
 
+        TestMultiRecipes.registerAllRecipes();
+
         ModRecipes.init();
         registerAllCrafting();
         registerAllSmelting();
