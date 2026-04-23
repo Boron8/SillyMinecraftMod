@@ -14,9 +14,7 @@ public class TestMultiOutSlot extends Slot {
     }
 
     @Override
-    public boolean isItemValid(ItemStack item) {
-        return false;
-    }
+    public boolean isItemValid(ItemStack item) { return false; }
 
     @Override
     public void onPickupFromSlot(EntityPlayer player, ItemStack item) {
@@ -25,9 +23,7 @@ public class TestMultiOutSlot extends Slot {
     }
 
     @Override
-    protected void onCrafting(ItemStack item, int amount) {
-        this.onCrafting(item);
-    }
+    protected void onCrafting(ItemStack item, int amount) { this.onCrafting(item); }
 
     @Override
     protected void onCrafting(ItemStack itemStack) {

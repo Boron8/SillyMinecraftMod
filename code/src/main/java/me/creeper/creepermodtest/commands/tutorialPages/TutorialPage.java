@@ -41,7 +41,5 @@ public class TutorialPage {
         return subPages.get(key.toLowerCase());
     }
 
-    public Map<String, TutorialPage> getSubPages() {
-        return subPages;
-    }
+    public Map<String, TutorialPage> getSubPages() { return subPages; }
 }

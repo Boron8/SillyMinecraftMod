@@ -3,9 +3,7 @@ package me.creeper.creepermodtest.commands.TutorialPages;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.ChatComponentText;
-import org.luaj.vm2.ast.Str;
 
 import java.util.*;
 
@@ -132,9 +130,7 @@ public class CommandTutorial implements ICommand {
     public String getCommandName() { return "tutorial"; }
 
     @Override
-    public String getCommandUsage(ICommandSender commandSender) {
-        return "command.tutorial.usage";
-    }
+    public String getCommandUsage(ICommandSender commandSender) { return "command.tutorial.usage"; }
 
     @Override
     public List getCommandAliases() { return Collections.emptyList(); }

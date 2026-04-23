@@ -42,9 +42,6 @@ public class GuiTestMulti extends GuiContainer {
             this.drawTexturedModalRect(xx + 56 + 6, yy + 36, 176, 0, 14, 14);
             // Arrow
             this.drawTexturedModalRect(xx + 79 + 5, yy + 34, 176, 14, progress + 1, 16);
-
-
-
         }
     }
 }

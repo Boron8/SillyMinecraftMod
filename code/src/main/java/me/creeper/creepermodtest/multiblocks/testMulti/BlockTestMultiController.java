@@ -9,7 +9,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
@@ -72,7 +71,7 @@ public class BlockTestMultiController extends BlockContainer {
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ) {
         if (!world.isRemote) {
             player.openGui(ExampleMod.getInstance(), GuiHandler.TEST_MULTI_ID, world, x, y, z);
-            // register + fix, Bye,
+            // register + fix, Bye, <-- uh, forgot to delete lol
         }
         return true;
     }

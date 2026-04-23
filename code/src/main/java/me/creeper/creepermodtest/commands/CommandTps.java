@@ -10,14 +10,10 @@ import java.util.Iterator;
 
 public class CommandTps extends CommandBase {
     @Override
-    public String getCommandName() {
-        return "tps";
-    }
+    public String getCommandName() { return "tps"; }
 
     @Override
-    public String getCommandUsage(ICommandSender sender) {
-        return "/tps";
-    }
+    public String getCommandUsage(ICommandSender sender) { return "command.tps.usage"; }
 
     @Override
     public void processCommand(ICommandSender sender, String[] args) {

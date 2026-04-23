@@ -50,9 +50,7 @@ public class TileEntityTestMultiController extends TileEntity implements IInvent
         }
     }
 
-    public void invalidateStructure() {
-        isFormed = false;
-    }
+    public void invalidateStructure() { isFormed = false; }
 
     @Override
     public void updateEntity() {
@@ -143,14 +141,10 @@ public class TileEntityTestMultiController extends TileEntity implements IInvent
 
 
     @Override
-    public int getSizeInventory() {
-        return inventory.length;
-    }
+    public int getSizeInventory() { return inventory.length; }
 
     @Override
-    public ItemStack getStackInSlot(int slot) {
-        return inventory[slot];
-    }
+    public ItemStack getStackInSlot(int slot) { return inventory[slot]; }
 
     @Override
     public ItemStack decrStackSize(int slot, int amount) {
@@ -198,19 +192,13 @@ public class TileEntityTestMultiController extends TileEntity implements IInvent
     }
 
     @Override
-    public String getInventoryName() {
-        return "container.testmulticontroller";
-    }
+    public String getInventoryName() { return "container.testmulticontroller"; }
 
     @Override
-    public boolean hasCustomInventoryName() {
-        return false;
-    }
+    public boolean hasCustomInventoryName() { return false; }
 
     @Override
-    public int getInventoryStackLimit() {
-        return 64;
-    }
+    public int getInventoryStackLimit() { return 64; }
 
     @Override
     public boolean isUseableByPlayer(EntityPlayer player) {

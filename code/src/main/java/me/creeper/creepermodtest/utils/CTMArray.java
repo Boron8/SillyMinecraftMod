@@ -2,7 +2,6 @@ package me.creeper.creepermodtest.utils;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.Iterator;
 
 public class CTMArray<T> {
     private final Deque<T> deque = new ArrayDeque<>();
@@ -19,16 +18,10 @@ public class CTMArray<T> {
         }
     }
 
-    public Deque<T> values() {
-        return deque;
-    }
+    public Deque<T> values() { return deque; }
 
-    public Object[] toArray() {
-        return deque.toArray();
-    }
+    public Object[] toArray() { return deque.toArray(); }
 
     @Override
-    public String toString() {
-        return deque.toString();
-    }
+    public String toString() { return deque.toString(); }
 }

@@ -28,12 +28,8 @@ public class ItemIronHammer extends Item {
     }
 
     @Override
-    public boolean hasContainerItem() {
-        return true;
-    }
+    public boolean hasContainerItem() { return true; }
 
     @Override
-    public boolean doesContainerItemLeaveCraftingGrid(ItemStack item) {
-        return false;
-    }
+    public boolean doesContainerItemLeaveCraftingGrid(ItemStack item) { return false; }
 }

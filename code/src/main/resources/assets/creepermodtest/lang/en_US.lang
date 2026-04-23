@@ -37,6 +37,8 @@ commands.testtest.playerNotFound=That player was not found
 command.version.usage=/version
 #licenses
 command.licenses.usage=/licenses {dep}
+#tps
+command.tps.usage=/tps
 
 
 
