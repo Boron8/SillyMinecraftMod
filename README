@@ -1,5 +1,5 @@
 # CreeperTestMod (CTM)
-### Anything and Everything
+### "Anything and Everything"
 
 <br>
 
@@ -37,4 +37,5 @@ Prio: 1-10
 | OreDict             | YES |  4   | Add OreDict for blocks/items            |
 | Tutorial JSON       | No  |  4   | Make tutorial use JSON                  |
 | Modular multiblocks | No  |  3   | Make the multiblock system more modular |
+| JSON delay Computer | No  |  2   | Make computer delays changeable in json |
 

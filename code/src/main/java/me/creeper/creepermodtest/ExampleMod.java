@@ -161,6 +161,7 @@ public class ExampleMod {
 
         if (getMainConfig().computers_enabled) {
             luaSandbox = new LuaSandbox();
+            luaSandbox.delayMs = mainConfig.computers_execution_delay;
         }
 
         ExampleMod.debugLog("ServerStart done.");

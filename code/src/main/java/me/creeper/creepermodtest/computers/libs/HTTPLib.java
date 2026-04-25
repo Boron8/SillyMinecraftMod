@@ -1,6 +1,7 @@
 package me.creeper.creepermodtest.computers.libs;
 
 import me.creeper.creepermodtest.ExampleMod;
+import me.creeper.creepermodtest.computers.LuaSandbox;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.OneArgFunction;
@@ -12,13 +13,14 @@ import java.net.*;
 import java.util.Arrays;
 
 public class HTTPLib {
-    public static LuaTable create() {
+    public static LuaTable create(LuaSandbox sandbox) {
         LuaTable http = new LuaTable();
 
         http.set("get", new OneArgFunction() {
             private long lastCall = 0;
             @Override
             public LuaValue call(LuaValue arg1) {
+                sandbox.applyDelay();
                 String urlString = arg1.checkjstring();
 
                 if (!ExampleMod.getMainConfig().computer_allow_network) { return LuaValue.valueOf("disabled"); }

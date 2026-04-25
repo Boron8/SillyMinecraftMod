@@ -16,6 +16,12 @@ public class RegisterCommands {
             manager.registerCommand(new CommandTps());
         }
 
+        public static void registerCommandDev(ServerCommandManager manager) {
+            manager.registerCommand(new CommandDev());
+        }
+
+
+
         public static void registerCommandTutorial() {
             ClientCommandHandler.instance.registerCommand(new CommandTutorial());
         }
@@ -36,6 +42,7 @@ public class RegisterCommands {
 
             registerCommandTestTest(manager);
             registerCommandTps(manager);
+            registerCommandDev(manager);
 
             ExampleMod.debugLog("Registering commands done.");
         }

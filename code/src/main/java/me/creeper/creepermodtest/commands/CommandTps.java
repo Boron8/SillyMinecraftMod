@@ -1,7 +1,6 @@
 package me.creeper.creepermodtest.commands;
 
 import me.creeper.creepermodtest.ExampleMod;
-import me.creeper.creepermodtest.mixin.MixinMinecraftServer;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.util.ChatComponentText;
