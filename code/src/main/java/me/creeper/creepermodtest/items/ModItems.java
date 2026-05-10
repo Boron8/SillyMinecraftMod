@@ -3,10 +3,9 @@ package me.creeper.creepermodtest.items;
 import cpw.mods.fml.common.registry.GameRegistry;
 import me.creeper.creepermodtest.ExampleMod;
 import me.creeper.creepermodtest.items.armor.MallirusArmor;
-import me.creeper.creepermodtest.items.tools.ItemDiamondHammer;
-import me.creeper.creepermodtest.items.tools.ItemDetonator;
-import me.creeper.creepermodtest.items.tools.ItemIronHammer;
-import me.creeper.creepermodtest.items.tools.ItemStoneHammer;
+import me.creeper.creepermodtest.items.crushed.ItemCrushedFineQuartz;
+import me.creeper.creepermodtest.items.crushed.ItemCrushedGranularQuartz;
+import me.creeper.creepermodtest.items.tools.*;
 import net.minecraft.item.Item;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -31,6 +30,18 @@ public class ModItems {
     public static Item itemMallirusLeggings;
     public static Item itemMallirusBoots;
     public static Item itemExplodingBallSummoner;
+    public static Item itemDenseCopper;
+    public static Item itemCopperIngot;
+    public static Item itemRedstoneWire;
+    public static Item itemInsulator;
+    public static Item itemStoneMortar;
+    public static Item itemStonePestle;
+    public static Item itemStoneMortarAndPestle;
+    public static Item itemCrushedGranularQuartz;
+    public static Item itemCrushedFineQuartz;
+    public static Item itemTungstenIngot;
+    public static Item itemTungstenPlate;
+
 
     public static void registerItems() {
         ExampleMod.debugLog("Registering items...");
@@ -46,6 +57,17 @@ public class ModItems {
         itemDiamondPlate = registerItem(new ItemDiamondPlate());
         itemDetonator = registerItem(new ItemDetonator());
         itemExplodingBallSummoner = registerItem(new ItemExplodingBallSummoner());
+        itemDenseCopper = registerItem(new ItemDenseCopper());
+        itemCopperIngot = registerItem(new ItemCopperIngot());
+        itemRedstoneWire = registerItem(new ItemRedstoneWire());
+        itemInsulator = registerItem(new ItemInsulator());
+        itemStoneMortar = registerItem(new ItemStoneMortar());
+        itemStonePestle = registerItem(new ItemStonePestle());
+        itemStoneMortarAndPestle = registerItem(new ItemStoneMortarAndPestle());
+        itemCrushedGranularQuartz = registerItem(new ItemCrushedGranularQuartz());
+        itemCrushedFineQuartz = registerItem(new ItemCrushedFineQuartz());
+        itemTungstenIngot = registerItem(new ItemTungstenIngot());
+        itemTungstenPlate = registerItem(new ItemTungstenPlate());
 
 
         itemMallirusHelmet = new MallirusArmor(MallirusArmor.MALLIRUS_ARMOR_MATERIAL, 0, 0);
@@ -73,6 +95,10 @@ public class ModItems {
         OreDictionary.registerOre("toolHammer", itemIronHammer);
         OreDictionary.registerOre("toolIronHammer", itemIronHammer);
         OreDictionary.registerOre("plateDiamond", itemDiamondPlate);
+        OreDictionary.registerOre("ingotCopper", itemCopperIngot);
+        OreDictionary.registerOre("denseCopper", itemDenseCopper);
+        OreDictionary.registerOre("ingotTungsten", itemTungstenIngot);
+        OreDictionary.registerOre("plateTungsten", itemTungstenPlate);
 
         ExampleMod.debugLog("Registering items done.");
     }

@@ -8,8 +8,18 @@ public class RegisterOreGeneration {
             GameRegistry.registerWorldGenerator(new MallirusOreGeneration(), 0);
         }
 
+        public static void registerGenerationCopperOre() {
+            GameRegistry.registerWorldGenerator(new CopperOreGeneration(), 0);
+        }
+
+        public static void registerGenerationTungstenOre() {
+            GameRegistry.registerWorldGenerator(new TungstenOreGeneration(), 0);
+        }
+
         public static void registerAllGeneration() {
             registerGenerationMallirusOre();
+            registerGenerationCopperOre();
+            registerGenerationTungstenOre();
         }
     }
 }

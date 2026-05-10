@@ -15,6 +15,10 @@ public class ModBlocks {
     public static Block blockTable;
     public static Block blockMallirusOre;
     public static Block blockCable;
+    public static Block blockTestMultiCasing;
+    public static Block blockCopperOre;
+    public static Block blockDenseCopperTube;
+    public static Block blockTungstenOre;
 
     public static void registerAllBlocks() {
         ExampleMod.debugLog("Registering blocks...");
@@ -22,8 +26,15 @@ public class ModBlocks {
         blockTable = registerBlock(new BlockTable());
         blockMallirusOre = registerBlock(new BlockMallirusOre());
         blockCable = registerBlock(new BlockCable());
+        blockTestMultiCasing = registerBlock(new BlockTestMultiCasing());
+        blockCopperOre = registerBlock(new BlockCopperOre());
+        blockDenseCopperTube = registerBlock(new BlockDenseCopperTube());
+        blockTungstenOre = registerBlock(new BlockTungstenOre());
 
         OreDictionary.registerOre("oreMallirus", blockMallirusOre);
+        OreDictionary.registerOre("oreCopper", blockCopperOre);
+        OreDictionary.registerOre("tube", blockDenseCopperTube);
+        OreDictionary.registerOre("oreTungsten", blockTungstenOre);
 
         ExampleMod.debugLog("Registering blocks done.");
     }

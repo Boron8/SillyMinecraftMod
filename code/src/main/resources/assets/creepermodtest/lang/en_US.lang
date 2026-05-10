@@ -4,15 +4,34 @@
 # Items            #
 ####################
 item.itemTest.name=Test
+
 item.itemCheese.name=Cheese
 item.itemGrilledCheese.name=Grilled Cheese
-item.itemMallirusGem.name=Mallirus Gem
-item.diamondHammer.name=Diamond Hammer
+
 item.stoneHammer.name=Stone Hammer
-item.itemIronPlate.name=Iron Plate
 item.ironHammer.name=Iron Hammer
+item.diamondHammer.name=Diamond Hammer
+
+item.itemIronPlate.name=Iron Plate
 item.itemDiamondPlate.name=Diamond Plate
+
 item.itemDetonator.name=Detonator
+item.itemExplodingBallSummoner.name=Exploding Ball Summoner
+
+item.itemMallirusGem.name=Mallirus Gem
+item.itemCopperIngot.name=Copper Ingot
+item.itemDenseCopper.name=Dense Copper
+
+item.itemCrushedFineQuartz.name=Crushed Quartz  [Fine]
+item.itemCrushedGranularQuartz.name=Crushed Quartz  [Granular]
+
+item.itemRedstoneWire.name=Redstone Wire
+item.itemInsulator.name=Insulator
+
+item.itemStoneMortar.name=Stone Mortar
+item.itemStonePestle.name=Stone Pestle
+item.itemStoneMortarAndPestle.name=Mortar & Pestle
+
 
 
 
@@ -22,6 +41,11 @@ item.itemDetonator.name=Detonator
 tile.blockTable.name=Table Block
 tile.blockMallirusOre.name=Mallirus Ore
 tile.blockBlinker.name=Blinker Block
+tile.blockCable.name=Redstone Cable
+tile.blockCopperOre.name=Copper Ore
+tile.blockTestMultiController.name=Linear Particle Accelerator (Linac) Controller
+tile.blockTestMultiCasing.name=Linear Particle Accelerator (Linac) Casing
+
 
 
 
@@ -42,10 +66,12 @@ command.tps.usage=/tps
 
 
 
+
 ####################
 # Tabs             #
 ####################
 itemGroup.tabCreepermodtest=Creeper test mod Tab
+
 
 
 
@@ -54,6 +80,14 @@ itemGroup.tabCreepermodtest=Creeper test mod Tab
 ####################
 key.creepermodtest.toggleTestRenderer=Toggle TestRenderer
 key.categories.creepermodtest=CreeperModTest Keybindings
+
+
+
+
+####################
+# Other            #
+####################
+item.null.name=Unknown Name
 
 
 

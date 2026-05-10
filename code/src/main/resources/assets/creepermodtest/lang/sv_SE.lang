@@ -16,12 +16,14 @@ item.itemDetonator.name=Detonator
 
 
 
+
 ####################
 # Blocks           #
 ####################
 tile.blockTable.name=Bord
 tile.blockMallirusOre.name=Mallirus Malm
 tile.blockBlinker.name=Blinkare-Block
+
 
 
 
@@ -40,10 +42,12 @@ command.licenses.usage=/licenses {dep}
 
 
 
+
 ####################
 # Tabs             #
 ####################
 itemGroup.tabCreepermodtest=Creeper test mod Tab
+
 
 
 
@@ -55,3 +59,23 @@ key.categories.creepermodtest=CreeperModTest Keybindings
 
 
 
+
+####################
+# TODO             #
+####################
+item.itemExplodingBallSummoner.name=Exploding Ball Summoner
+item.itemCopperIngot.name=Copper Ingot
+item.itemDenseCopper.name=Dense Copper
+item.itemCrushedFineQuartz.name=Crushed Quartz  [Fine]
+item.itemCrushedGranularQuartz.name=Crushed Quartz  [Granular]
+item.itemRedstoneWire.name=Redstone Wire
+item.itemInsulator.name=Insulator
+item.itemStoneMortar.name=Stone Mortar
+item.itemStonePestle.name=Stone Pestle
+tile.blockCable.name=Redstone Cable
+tile.blockCopperOre.name=Copper Ore
+tile.blockTestMultiController.name=Linear Particle Accelerator (Linac) Controller
+tile.blockTestMultiCasing.name=Linear Particle Accelerator (Linac) Casing
+command.tps.usage=/tps
+item.null.name=Unknown Name
+item.itemStoneMortarAndPestle.name=Mortar & Pestle

@@ -93,6 +93,18 @@ public class ModRecipes {
                 new ItemStack(ModBlocks.blockMallirusOre),
                 4.0F
         );
+        // Copper Ingot
+        addSmelting(
+                new ItemStack(ModItems.itemCopperIngot),
+                new ItemStack(ModBlocks.blockCopperOre),
+                4.0F
+        );
+        // Tungsten Ingot
+        addSmelting(
+                new ItemStack(ModItems.itemTungstenIngot),
+                new ItemStack(ModBlocks.blockTungstenOre),
+                4.0F
+        );
 
 
 
@@ -179,6 +191,15 @@ public class ModRecipes {
                 new ItemStack(ModItems.itemDiamondHammer, 1, OreDictionary.WILDCARD_VALUE)
 
         );
+        // Tungsten plate
+        addShapeless(
+                new ItemStack(ModItems.itemTungstenPlate),
+
+                new ItemStack(ModItems.itemTungstenIngot),
+                new ItemStack(ModItems.itemDiamondHammer, 1, OreDictionary.WILDCARD_VALUE)
+        );
+
+
 
         // =-=-=-=-=-=-=-=-=-=-=-=-=-=-= \\
         // TOOLS AND ARMOR               \\
@@ -244,6 +265,127 @@ public class ModRecipes {
                 "D D",
 
                 'D', new ItemStack(Items.diamond)
+        );
+        addShaped(
+                new ItemStack(ModItems.itemStoneMortar),
+
+                "S S",
+                "SSS",
+
+                'S', new ItemStack(Blocks.stone)
+        );
+        addShaped(
+                new ItemStack(ModItems.itemStonePestle),
+                "S",
+                "S",
+                "S",
+
+                'S', new ItemStack(Blocks.stone)
+        );
+        addShapeless(
+                new ItemStack(ModItems.itemStoneMortarAndPestle),
+
+                new ItemStack(ModItems.itemStoneMortar),
+                new ItemStack(ModItems.itemStonePestle)
+        );
+
+
+
+        // =-=-=-=-=-=-=-=-=-=-=-=-=-=-= \\
+        // Other                         \\
+        // =-=-=-=-=-=-=-=-=-=-=-=-=-=-= \\
+        addShapeless(
+                new ItemStack(ModItems.itemDenseCopper),
+
+                new ItemStack(ModItems.itemCopperIngot),
+                new ItemStack(ModItems.itemCopperIngot),
+                new ItemStack(ModItems.itemCopperIngot),
+                new ItemStack(ModItems.itemCopperIngot),
+
+                new ItemStack(ModItems.itemIronHammer, 1, OreDictionary.WILDCARD_VALUE)
+        );
+        addShapeless(
+                new ItemStack(ModItems.itemDenseCopper),
+
+                new ItemStack(ModItems.itemCopperIngot),
+                new ItemStack(ModItems.itemCopperIngot),
+                new ItemStack(ModItems.itemCopperIngot),
+                new ItemStack(ModItems.itemCopperIngot),
+
+                new ItemStack(ModItems.itemDiamondHammer, 1, OreDictionary.WILDCARD_VALUE)
+        );
+        addShaped(
+                new ItemStack(ModBlocks.blockTestMultiCasing),
+
+                "CSC",
+                "SDS",
+                "CSC",
+
+                'D', new ItemStack(ModItems.itemDenseCopper),
+                'S', new ItemStack(Blocks.stone),
+                'C', new ItemStack(ModBlocks.blockCable)
+
+        );
+        // Insulator
+        addShapeless(
+                new ItemStack(ModItems.itemInsulator),
+
+                new ItemStack(Items.dye, 1, 8),
+                new ItemStack(Items.dye, 1, 8),
+                new ItemStack(Items.dye, 1, 8),
+                new ItemStack(ModItems.itemCrushedFineQuartz)
+        );
+        addShaped(
+                new ItemStack(ModBlocks.blockDenseCopperTube, 6),
+
+                "C",
+                "C",
+                "C",
+
+                'C', new ItemStack(ModItems.itemDenseCopper)
+
+        );
+
+
+
+        // =-=-=-=-=-=-=-=-=-=-=-=-=-=-= \\
+        // Powders/Crushed               \\
+        // =-=-=-=-=-=-=-=-=-=-=-=-=-=-= \\
+        // Quartz powder
+        addShapeless(
+                new ItemStack(ModItems.itemCrushedGranularQuartz),
+
+                new ItemStack(Items.quartz),
+                new ItemStack(ModItems.itemStoneMortarAndPestle, 1, OreDictionary.WILDCARD_VALUE)
+        );
+        addShapeless(
+                new ItemStack(ModItems.itemCrushedFineQuartz),
+
+                new ItemStack(ModItems.itemCrushedGranularQuartz),
+                new ItemStack(ModItems.itemStoneMortarAndPestle, 1, OreDictionary.WILDCARD_VALUE)
+        );
+
+
+
+        // =-=-=-=-=-=-=-=-=-=-=-=-=-=-= \\
+        // Redstone/Logic/Computers      \\
+        // =-=-=-=-=-=-=-=-=-=-=-=-=-=-= \\
+        // Wire
+        addShaped(
+                new ItemStack(ModItems.itemRedstoneWire),
+
+                "R",
+                "R",
+                "R",
+
+                'R', new ItemStack(Items.redstone)
+        );
+        // Cable
+        addShapeless(
+                new ItemStack(ModBlocks.blockCable),
+
+                new ItemStack(ModItems.itemRedstoneWire),
+                new ItemStack(ModItems.itemInsulator)
         );
 
 

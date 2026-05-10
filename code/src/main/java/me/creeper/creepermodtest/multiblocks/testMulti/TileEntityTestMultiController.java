@@ -1,18 +1,66 @@
 package me.creeper.creepermodtest.multiblocks.testMulti;
 
 import me.creeper.creepermodtest.ExampleMod;
+import me.creeper.creepermodtest.blocks.ModBlocks;
+import me.creeper.creepermodtest.multiblocks.BlockMeta;
+import me.creeper.creepermodtest.multiblocks.MultiEntry;
+import me.creeper.creepermodtest.multiblocks.helpers.FacingHelper;
+import me.creeper.creepermodtest.multiblocks.helpers.RelativeCoordinateSystem;
 import me.creeper.creepermodtest.recipes.TestMultiRecipe;
 import me.creeper.creepermodtest.recipes.TestMultiRecipes;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TileEntityTestMultiController extends TileEntity implements IInventory {
+    //new MultiEntry(0, 0, 1, Blocks.gold_block, -1), // Front
+    //new MultiEntry(0, 0, 2, Blocks.gold_block, -1),
+
+    //new MultiEntry(1, 0, 0, Blocks.diamond_block, -1), // Right
+    //new MultiEntry(2, 0, 0, Blocks.diamond_block, -1),
+
+    //new MultiEntry(-1, 0, 0, Blocks.emerald_block, -1), // Left
+    //new MultiEntry(-2, 0, 0, Blocks.emerald_block, -1),
+
+    //new MultiEntry(0, 0, -1, Blocks.iron_block, -1), // Back
+    //new MultiEntry(0, 0, -2, Blocks.iron_block, -1),
+
+
+    // Right/-Left Y Front/-Back
+    private static List<MultiEntry> shape = new ArrayList<>();
+    static {
+        for (int i = 0; i < 10; i++) {
+            addLayer(-i);
+        }
+        shape.add(new MultiEntry(0, 0, -10, ModBlocks.blockTestMultiCasing, -1));
+        for (int i = 0; i < 9; i++) {
+            shape.add(new MultiEntry(0, 0, -(i)-1, ModBlocks.blockDenseCopperTube, -1));
+        }
+    }
+    public static void addLayer(int yOffset) {
+        Block casing = ModBlocks.blockTestMultiCasing;
+        shape.add(new MultiEntry(1, -1, yOffset, casing, -1));
+        shape.add(new MultiEntry(0, -1, yOffset, casing, -1));
+        shape.add(new MultiEntry(-1, -1, yOffset, casing, -1));
+        shape.add(new MultiEntry(1, 1, yOffset, casing, -1));
+        shape.add(new MultiEntry(0, 1, yOffset, casing, -1));
+        shape.add(new MultiEntry(-1, 1, yOffset, casing, -1));
+        shape.add(new MultiEntry(1, 0, yOffset, casing, -1));
+        shape.add(new MultiEntry(-1, 0, yOffset, casing, -1));
+    }
+
+
+
+
+
+
     private ItemStack[] inventory = new ItemStack[2]; // In+Out
 
     public int recipeTime;
@@ -21,33 +69,25 @@ public class TileEntityTestMultiController extends TileEntity implements IInvent
     private boolean isFormed = false;
 
     public boolean checkStructure() {
-        int meta = worldObj.getBlockMetadata(xCoord, yCoord, zCoord);
-        int xOffset = 0;
-        int zOffset = 0;
-        switch (meta) {
-            case 0:
-                zOffset = 1;
-                break;
-            case 1:
-                xOffset = -1;
-                break;
-            case 2:
-                zOffset = -1;
-                break;
-            case 3:
-                xOffset = 1;
-                break;
+        for (MultiEntry entry : shape) {
+            BlockMeta blockMeta = RelativeCoordinateSystem.getRelativeBlock(
+                    entry.x, entry.y, entry.z,
+                    xCoord, yCoord, zCoord,
+                    worldObj
+            );
+
+            int rot = FacingHelper.getFacingFromMeta(blockMeta.meta);
+
+            if ( blockMeta.block != entry.block ||
+                (rot != entry.meta && entry.meta != -1) ) {
+
+                invalidateStructure();
+                return false;
+            }
         }
 
-        Block blockBehind = worldObj.getBlock(xCoord+xOffset, yCoord, zCoord+zOffset);
-
-        if (blockBehind == Blocks.gold_block) {
-            isFormed = true;
-            return true;
-        } else {
-            invalidateStructure();
-            return false;
-        }
+        isFormed = true;
+        return true;
     }
 
     public void invalidateStructure() { isFormed = false; }
@@ -55,12 +95,11 @@ public class TileEntityTestMultiController extends TileEntity implements IInvent
     @Override
     public void updateEntity() {
         if (worldObj.isRemote) { // Client side
-            // Client logic...
             return;
         }
 
         // server Side
-        if (ExampleMod.getServerCounter().getCount() % 100 == 0) {
+        if (ExampleMod.getServerCounter().getCount() % 100 == 0) { // 5 s
             checkStructure();
         }
 

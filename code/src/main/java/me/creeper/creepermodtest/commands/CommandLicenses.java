@@ -2,13 +2,16 @@ package me.creeper.creepermodtest.commands;
 
 import me.creeper.creepermodtest.licenseManager.LicenseLoader;
 import me.creeper.creepermodtest.utils.NumberUtils;
-import net.minecraft.command.*;
+import net.minecraft.command.ICommand;
+import net.minecraft.command.ICommandSender;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IChatComponent;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class CommandLicenses implements ICommand {
 

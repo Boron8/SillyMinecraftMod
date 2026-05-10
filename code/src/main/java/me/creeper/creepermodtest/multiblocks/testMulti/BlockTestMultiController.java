@@ -1,18 +1,29 @@
 package me.creeper.creepermodtest.multiblocks.testMulti;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import me.creeper.creepermodtest.ExampleMod;
 import me.creeper.creepermodtest.handlers.GuiHandler;
+import me.creeper.creepermodtest.multiblocks.helpers.FacingHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
 public class BlockTestMultiController extends BlockContainer {
+    @SideOnly(Side.CLIENT)
+    private IIcon frontIcon;
+    @SideOnly(Side.CLIENT)
+    private IIcon sideIcon;
+
+
     public BlockTestMultiController() {
         super(Material.iron);
 
@@ -22,7 +33,7 @@ public class BlockTestMultiController extends BlockContainer {
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
 
         this.setBlockName("blockTestMultiController");
-        this.setBlockTextureName(ExampleMod.MODID+":block_test_multi_controller");
+        this.setBlockTextureName(ExampleMod.MODID+":block_test_multi_controller_side");
     }
 
     @Override
@@ -74,5 +85,24 @@ public class BlockTestMultiController extends BlockContainer {
             // register + fix, Bye, <-- uh, forgot to delete lol
         }
         return true;
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void registerBlockIcons(IIconRegister reg) {
+        this.sideIcon        = reg.registerIcon(ExampleMod.MODID + ":block_test_multi_controller_side" );
+        this.frontIcon       = reg.registerIcon(ExampleMod.MODID + ":block_test_multi_controller_front");
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public IIcon getIcon(int side, int meta) {  // TODO active meta/state thing  texture tile
+        int facing = FacingHelper.getFacingFromMeta(meta);
+
+        if (side == facing) {
+            return frontIcon;
+        }
+
+        return sideIcon;
     }
 }
