@@ -18,6 +18,7 @@
 
 # TODO LIST FOR CTM
 High prio = Higher priority <br>
+Low prio = Lower priority <br>
 Prio: 1-10
 
 | Name                | Fix | Prio | Description                             |
@@ -38,4 +39,7 @@ Prio: 1-10
 | Tutorial JSON       | No  |  4   | Make tutorial use JSON                  |
 | Modular multiblocks | No  |  3   | Make the multiblock system more modular |
 | JSON delay Computer | No  |  2   | Make computer delays changeable in json |
+| Active texture      | No  |  2   | Active texture for TestMulti            |
+| Linac last layer    | No  |  2   | Fix linac last layer not required       |
+
 
