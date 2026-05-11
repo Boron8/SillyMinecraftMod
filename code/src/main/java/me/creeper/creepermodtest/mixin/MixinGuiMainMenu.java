@@ -1,23 +1,32 @@
 package me.creeper.creepermodtest.mixin;
 
+import me.creeper.creepermodtest.ExampleMod;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiMainMenu;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import java.util.Random;
 
 
 @Mixin(GuiMainMenu.class)
-public class MixinGuiMainMenu {
+public abstract class MixinGuiMainMenu {
     @Shadow private ResourceLocation field_110351_G;
 
+    @Shadow @Final private static Random rand;
+
     /**
-     * @author a
-     * @reason a
+     * @author Boron8
+     * @reason Cooler
      */
     @Overwrite
     private void rotateAndBlurSkybox(float p_73968_1_) {
@@ -52,5 +61,32 @@ public class MixinGuiMainMenu {
         tessellator.draw();
         GL11.glEnable(GL11.GL_ALPHA_TEST);
         GL11.glColorMask(true, true, true, true);
+    }
+
+    @Inject(method = "drawScreen", at = @At("TAIL"))
+    private void onDrawScreen(int mouseX, int mouseY, float partialTicks, CallbackInfo ci) {
+        GuiMainMenu self = ((GuiMainMenu)(Object)this);
+
+        if (ExampleMod.guiTimer >= 10) {
+            ExampleMod.guiIndex = ExampleMod.random.nextInt(ExampleMod.guiText.length());
+
+            ExampleMod.guiChar = ExampleMod.guiOptions[ExampleMod.random.nextInt(ExampleMod.guiOptions.length)];
+
+            StringBuilder sb = new StringBuilder(ExampleMod.originalGuiText);
+            sb.setCharAt(ExampleMod.guiIndex, ExampleMod.guiChar);
+
+            ExampleMod.guiText = sb.toString();
+
+            ExampleMod.guiTimer = 0;
+        }
+        ExampleMod.guiTimer++;
+
+
+        self.drawString(
+                self.mc.fontRenderer,
+                ExampleMod.guiText,
+                5, 5,
+                0xFFFFFF
+        );
     }
 }

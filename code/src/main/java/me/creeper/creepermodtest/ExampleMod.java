@@ -56,6 +56,14 @@ public class ExampleMod {
     public  static MainConfig getMainConfig() { return mainConfig; }
 
 
+    public static char         guiChar = ' ';
+    public static int          guiIndex = 0;
+    public static int          guiTimer = 0;
+    public static char[]       guiOptions = {'@', '#', '$', '&', '/', '[', '!'};
+    public static String       guiText = "Run /licenses in-game to see CTM licenses";
+    public static final String originalGuiText = "Run /licenses in-game to see CTM licenses";
+
+
     private static final Counter globalServerCounter = new Counter();
     private static final Counter globalClientCounter = new Counter();
 
