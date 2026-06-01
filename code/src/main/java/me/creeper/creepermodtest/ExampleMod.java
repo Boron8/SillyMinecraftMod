@@ -49,7 +49,7 @@ public class ExampleMod {
     // PRE     = Pre Release
     // RELEASE = Release
     public static final String RELEASE_TYPE    = "DEV";
-    public static final String RELEASE_VERSION = "2";
+    public static final String RELEASE_VERSION = "3";
     public static final String MODID           = "creepermodtest";
     public static final String VERSION         = "0.0.2-" + RELEASE_TYPE + "-" + RELEASE_VERSION;
 
