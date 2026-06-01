@@ -22,6 +22,7 @@ import me.creeper.creepermodtest.handlers.KeybindingsHandler;
 import me.creeper.creepermodtest.items.ModItems;
 import me.creeper.creepermodtest.licenseManager.LicenseLoader;
 import me.creeper.creepermodtest.multiblocks.registerMultiblocks;
+import me.creeper.creepermodtest.packets.PacketHandler;
 import me.creeper.creepermodtest.recipes.RegisterRecipes;
 import me.creeper.creepermodtest.renderers.TestRenderer;
 import me.creeper.creepermodtest.screens.ModGuis;
@@ -48,7 +49,7 @@ public class ExampleMod {
     // PRE     = Pre Release
     // RELEASE = Release
     public static final String RELEASE_TYPE    = "DEV";
-    public static final String RELEASE_VERSION = "1";
+    public static final String RELEASE_VERSION = "2";
     public static final String MODID           = "creepermodtest";
     public static final String VERSION         = "0.0.2-" + RELEASE_TYPE + "-" + RELEASE_VERSION;
 
@@ -150,6 +151,8 @@ public class ExampleMod {
 
 
         ExampleMod.debugLog("Init done.");
+
+        PacketHandler.registerPackets();
     }
 
 

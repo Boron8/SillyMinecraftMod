@@ -26,7 +26,7 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "0.1"
+version = "0.0.2-DEV-2"
 group = "me.creeper.creepermodtest" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "creepermodtest"
 def modid = "creepermodtest"
@@ -131,7 +131,8 @@ jar {
     manifest {
             attributes (
                     'TweakClass': 'org.spongepowered.asm.launch.MixinTweaker',
-                    'MixinConfigs': "mixins.creepermodtest.json"
+                    'MixinConfigs': "mixins.creepermodtest.json",
+                    "FMLCorePluginContainsFMLMod": 'true'
             )
     }
 
