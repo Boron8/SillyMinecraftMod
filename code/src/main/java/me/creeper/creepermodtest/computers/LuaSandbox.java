@@ -7,8 +7,8 @@ import org.luaj.vm2.lib.DebugLib;
 import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.ZeroArgFunction;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.Consumer;
 
 public class LuaSandbox {
@@ -22,12 +22,12 @@ public class LuaSandbox {
     protected LuaTable stringLib;
     protected LuaTable randLib;
 
-    private final List<Consumer<String>> outputListeners = new ArrayList<>();
+    private final List<Consumer<String>> outputListeners = new CopyOnWriteArrayList<>();
 
-    public void addOutputListener(Consumer<String> listener) {
+    public synchronized void addOutputListener(Consumer<String> listener) {
         outputListeners.add(listener);
     }
-    public void removeOutputListener(Consumer<String> listener) {
+    public synchronized void removeOutputListener(Consumer<String> listener) {
         outputListeners.remove(listener);
     }
 
@@ -38,9 +38,10 @@ public class LuaSandbox {
         try {
             paused = true;
             if (delayMs > 0) Thread.sleep(delayMs);
-            paused = false;
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
+        } finally {
+            paused = false;
         }
     }
 

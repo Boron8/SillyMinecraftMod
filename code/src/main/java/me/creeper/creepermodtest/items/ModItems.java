@@ -41,6 +41,8 @@ public class ModItems {
     public static Item itemCrushedFineQuartz;
     public static Item itemTungstenIngot;
     public static Item itemTungstenPlate;
+    public static Item itemDevNote;
+    public static Item itemEntrance;
 
 
     public static void registerItems() {
@@ -68,6 +70,8 @@ public class ModItems {
         itemCrushedFineQuartz = registerItem(new ItemCrushedFineQuartz());
         itemTungstenIngot = registerItem(new ItemTungstenIngot());
         itemTungstenPlate = registerItem(new ItemTungstenPlate());
+        itemDevNote = registerItem(new ItemDevNote());
+        itemEntrance = registerItem(new ItemEntrance());
 
 
         itemMallirusHelmet = new MallirusArmor(MallirusArmor.MALLIRUS_ARMOR_MATERIAL, 0, 0);

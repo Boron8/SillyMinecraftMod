@@ -4,6 +4,7 @@ import me.creeper.creepermodtest.computers.LuaSandbox;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.OneArgFunction;
+import org.luaj.vm2.lib.ThreeArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
 
 public class MathLib {
@@ -126,6 +127,30 @@ public class MathLib {
                 return LuaValue.valueOf(out);
             }
         });
+        math.set("log10", new OneArgFunction() {
+            @Override
+            public LuaValue call(LuaValue arg1) {
+                sandbox.applyDelay();
+
+                double x = arg1.checkdouble();
+
+                double out = Math.log10(x);
+
+                return LuaValue.valueOf(out);
+            }
+        });
+        math.set("exp", new OneArgFunction() {
+            @Override
+            public LuaValue call(LuaValue arg1) {
+                sandbox.applyDelay();
+
+                double x = arg1.checkdouble();
+
+                double out = Math.exp(x);
+
+                return LuaValue.valueOf(out);
+            }
+        });
         math.set("sin", new OneArgFunction() {
             @Override
             public LuaValue call(LuaValue arg1) {
@@ -194,6 +219,82 @@ public class MathLib {
                 double x = arg1.checkdouble();
 
                 double result = Math.atan(x);
+
+                return LuaValue.valueOf(result);
+            }
+        });
+        math.set("atan2", new TwoArgFunction() {
+            @Override
+            public LuaValue call(LuaValue arg1, LuaValue arg2) {
+                sandbox.applyDelay();
+
+                double y = arg2.checkdouble();
+                double x = arg1.checkdouble();
+
+                double result = Math.atan2(y, x);
+
+                return LuaValue.valueOf(result);
+            }
+        });
+        math.set("rad", new OneArgFunction() {
+            @Override
+            public LuaValue call(LuaValue arg1) {
+                sandbox.applyDelay();
+
+                double x = arg1.checkdouble();
+
+                double result = Math.toRadians(x);
+
+                return LuaValue.valueOf(result);
+            }
+        });
+        math.set("deg", new OneArgFunction() {
+            @Override
+            public LuaValue call(LuaValue arg1) {
+                sandbox.applyDelay();
+
+                double x = arg1.checkdouble();
+
+                double result = Math.toDegrees(x);
+
+                return LuaValue.valueOf(result);
+            }
+        });
+        math.set("clamp", new ThreeArgFunction() {
+            @Override
+            public LuaValue call(LuaValue arg1, LuaValue arg2, LuaValue arg3) {
+                sandbox.applyDelay();
+
+                double x = arg1.checkdouble();
+                double min = arg2.checkdouble();
+                double max = arg3.checkdouble();
+
+                double result = Math.max(min, Math.min(max, x));
+
+                return LuaValue.valueOf(result);
+            }
+        });
+        math.set("invert", new OneArgFunction() {
+            @Override
+            public LuaValue call(LuaValue arg1) {
+                sandbox.applyDelay();
+
+                double x = arg1.checkdouble();
+
+                double result = -x;
+
+                return LuaValue.valueOf(result);
+            }
+        });
+        math.set("hypot", new TwoArgFunction() {
+            @Override
+            public LuaValue call(LuaValue arg1, LuaValue arg2) {
+                sandbox.applyDelay();
+
+                double x = arg1.checkdouble();
+                double y = arg2.checkdouble();
+
+                double result = Math.hypot(x, y);
 
                 return LuaValue.valueOf(result);
             }

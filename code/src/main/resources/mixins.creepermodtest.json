@@ -5,10 +5,12 @@
   "refmap": "mixins.creepermodtest.refmap.json",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MixinMinecraftServer"
+    "MixinMinecraftServer",
+    "WorldGenDungeonsMixin"
   ],
   "client": [
     "GuiAccessor",
+    "GuiNewChatMixin",
     "MixinGuiMainMenu",
     "MixinPiston"
   ],

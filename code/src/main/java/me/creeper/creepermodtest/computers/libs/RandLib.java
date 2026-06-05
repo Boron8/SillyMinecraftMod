@@ -26,6 +26,7 @@ public class RandLib {
                         sandbox.applyDelay();
 
                         double val = internalRandom.nextDouble();
+
                         return LuaValue.valueOf(val);
                     }
                 });
@@ -36,10 +37,33 @@ public class RandLib {
                         sandbox.applyDelay();
 
                         int bound = arg1.checkint();
+                        if (bound <= 0) { return LuaValue.NIL; }
 
-                        double val = internalRandom.nextInt(bound);
+                        int val = internalRandom.nextInt(bound);
 
                         return LuaValue.valueOf(val);
+                    }
+                });
+
+                obj.set("nextBool", new ZeroArgFunction() {
+                    @Override
+                    public LuaValue call() {
+                        sandbox.applyDelay();
+
+                        boolean val = internalRandom.nextBoolean();
+
+                        return LuaValue.valueOf(val);
+                    }
+                });
+
+                obj.set("seed", new OneArgFunction() {
+                    @Override
+                    public LuaValue call(LuaValue arg1) {
+                        sandbox.applyDelay();
+
+                        internalRandom.setSeed(arg1.checklong());
+
+                        return LuaValue.NIL;
                     }
                 });
 

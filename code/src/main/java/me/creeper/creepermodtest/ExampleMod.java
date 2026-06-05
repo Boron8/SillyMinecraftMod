@@ -22,10 +22,12 @@ import me.creeper.creepermodtest.handlers.KeybindingsHandler;
 import me.creeper.creepermodtest.items.ModItems;
 import me.creeper.creepermodtest.licenseManager.LicenseLoader;
 import me.creeper.creepermodtest.multiblocks.registerMultiblocks;
+import me.creeper.creepermodtest.other.ChestGens;
 import me.creeper.creepermodtest.packets.PacketHandler;
 import me.creeper.creepermodtest.recipes.RegisterRecipes;
 import me.creeper.creepermodtest.renderers.TestRenderer;
 import me.creeper.creepermodtest.screens.ModGuis;
+import me.creeper.creepermodtest.unknownFont.UnknownFontRenderer;
 import me.creeper.creepermodtest.utils.CTMArray;
 import me.creeper.creepermodtest.utils.Counter;
 import net.minecraft.client.Minecraft;
@@ -68,6 +70,8 @@ public class ExampleMod {
     private static final Counter globalServerCounter = new Counter();
     private static final Counter globalClientCounter = new Counter();
 
+    public static UnknownFontRenderer unknownFontRenderer;
+
     public static Random random = new Random();
 
     @SideOnly(Side.CLIENT)
@@ -78,7 +82,6 @@ public class ExampleMod {
     public static CTMArray<Long> tickTimesNS = new CTMArray<>(100);
 
     private static ExampleMod instance;
-
     public static ExampleMod getInstance() { return instance; }
 
     @EventHandler
@@ -117,6 +120,10 @@ public class ExampleMod {
         //Recipe registering
         //Custom Renderers
         //Custom handlers
+
+        unknownFontRenderer = new UnknownFontRenderer();
+
+        ChestGens.addDevNotes();
 
         ModGuis.registerAllGuis();
 
