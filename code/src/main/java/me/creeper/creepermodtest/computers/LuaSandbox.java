@@ -21,6 +21,7 @@ public class LuaSandbox {
     protected LuaTable timeLib;
     protected LuaTable stringLib;
     protected LuaTable randLib;
+    protected LuaTable base64Lib;
 
     private final List<Consumer<String>> outputListeners = new CopyOnWriteArrayList<>();
 
@@ -66,6 +67,9 @@ public class LuaSandbox {
 
         randLib = RandLib.create(this);
         modules.set("rand", randLib);
+
+        //base64Lib = Base64Lib.create(this);
+        //modules.set("base64", randLib);
 
 
         globals.set("require", new OneArgFunction() {

@@ -5,6 +5,7 @@ import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.ThreeArgFunction;
+import org.luaj.vm2.lib.TwoArgFunction;
 
 public class StringLib {
     public static LuaTable create(LuaSandbox sandbox) {
@@ -60,6 +61,46 @@ public class StringLib {
                 String new_     = original.replace(from, to);
 
                 return LuaValue.valueOf(new_);
+            }
+        });
+        string.set("replace", new TwoArgFunction() {
+            @Override
+            public LuaValue call(LuaValue arg1, LuaValue arg2) {
+                sandbox.applyDelay();
+                return LuaValue.valueOf(
+                         arg1.checkjstring().concat(
+                         arg2.checkjstring()        )
+                );
+            }
+        });
+        string.set("startsWith", new TwoArgFunction() {
+            @Override
+            public LuaValue call(LuaValue arg1, LuaValue arg2) {
+                sandbox.applyDelay();
+
+                return LuaValue.valueOf(
+                        arg1.checkjstring().startsWith( arg2.checkjstring() )
+                );
+            }
+        });
+        string.set("endsWith", new TwoArgFunction() {
+            @Override
+            public LuaValue call(LuaValue arg1, LuaValue arg2) {
+                sandbox.applyDelay();
+
+                return LuaValue.valueOf(
+                        arg1.checkjstring().startsWith( arg2.checkjstring() )
+                );
+            }
+        });
+        string.set("trim", new OneArgFunction() {
+            @Override
+            public LuaValue call(LuaValue arg1) {
+                sandbox.applyDelay();
+
+                return LuaValue.valueOf(
+                        arg1.checkjstring().trim()
+                );
             }
         });
 

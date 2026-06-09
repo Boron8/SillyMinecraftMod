@@ -8,11 +8,15 @@ import org.luaj.vm2.lib.ThreeArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
 
 public class MathLib {
+    private static final double GOLDEN_RATIO = (1 + Math.sqrt(5)) / 2;
+
+
     public static LuaTable create(LuaSandbox sandbox) {
         LuaTable math = new LuaTable();
 
         math.set("PI", LuaValue.valueOf(Math.PI));
         math.set("E", LuaValue.valueOf(Math.E));
+        math.set("GR", LuaValue.valueOf(GOLDEN_RATIO));
 
         math.set("sqrt", new OneArgFunction() {
             @Override
