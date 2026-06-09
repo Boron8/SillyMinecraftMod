@@ -41,5 +41,6 @@ Prio: 1-10
 | JSON delay Computer | No  |  2   | Make computer delays changeable in json |
 | Active texture      | No  |  2   | Active texture for TestMulti            |
 | Linac last layer    | No  |  2   | Fix linac last layer not required       |
+| Fix HTTP lib        | No  |  2   | Make HTTP lib better                    |
 
 
