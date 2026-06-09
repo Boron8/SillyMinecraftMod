@@ -149,3 +149,11 @@ tasks.compileJava.options.compilerArgs += [
 reobf {
     addExtraSrgFile outSrgFile
 }
+
+
+
+
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
