@@ -19,6 +19,7 @@ public class ModBlocks {
     public static Block blockCopperOre;
     public static Block blockDenseCopperTube;
     public static Block blockTungstenOre;
+    public static Block blockBerryBush;
 
     public static void registerAllBlocks() {
         ExampleMod.debugLog("Registering blocks...");
@@ -30,11 +31,15 @@ public class ModBlocks {
         blockCopperOre = registerBlock(new BlockCopperOre());
         blockDenseCopperTube = registerBlock(new BlockDenseCopperTube());
         blockTungstenOre = registerBlock(new BlockTungstenOre());
+        blockBerryBush = registerBlock(new BlockBerryBush());
 
         OreDictionary.registerOre("oreMallirus", blockMallirusOre);
         OreDictionary.registerOre("oreCopper", blockCopperOre);
         OreDictionary.registerOre("tube", blockDenseCopperTube);
         OreDictionary.registerOre("oreTungsten", blockTungstenOre);
+        OreDictionary.registerOre("plantBerryBush", blockBerryBush);
+        OreDictionary.registerOre("bushBerry", blockBerryBush);
+        OreDictionary.registerOre("bush", blockBerryBush);
 
         ExampleMod.debugLog("Registering blocks done.");
     }

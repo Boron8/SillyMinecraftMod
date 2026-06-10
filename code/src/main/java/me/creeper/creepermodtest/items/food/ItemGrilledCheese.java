@@ -1,4 +1,4 @@
-package me.creeper.creepermodtest.items;
+package me.creeper.creepermodtest.items.food;
 
 import me.creeper.creepermodtest.ExampleMod;
 import net.minecraft.item.ItemFood;

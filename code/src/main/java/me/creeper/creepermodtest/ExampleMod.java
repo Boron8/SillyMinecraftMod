@@ -121,7 +121,7 @@ public class ExampleMod {
         //Custom Renderers
         //Custom handlers
 
-        unknownFontRenderer = new UnknownFontRenderer();
+        if (event.getSide().isClient()) { unknownFontRenderer = new UnknownFontRenderer(); }
 
         ChestGens.addDevNotes();
 
@@ -134,7 +134,7 @@ public class ExampleMod {
         RegisterOreGeneration.RegisterOreGenerationHandler.registerAllGeneration();
 
         // Forge Events
-        MinecraftForge.EVENT_BUS.register(new TestRenderer());
+        if (event.getSide().isClient()) { MinecraftForge.EVENT_BUS.register(new TestRenderer()); }
         MinecraftForge.EVENT_BUS.register(new CounterHandler());
 
         if (event.getSide().isClient()) {

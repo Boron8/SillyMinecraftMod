@@ -5,6 +5,9 @@ import me.creeper.creepermodtest.ExampleMod;
 import me.creeper.creepermodtest.items.armor.MallirusArmor;
 import me.creeper.creepermodtest.items.crushed.ItemCrushedFineQuartz;
 import me.creeper.creepermodtest.items.crushed.ItemCrushedGranularQuartz;
+import me.creeper.creepermodtest.items.food.ItemCheese;
+import me.creeper.creepermodtest.items.food.ItemGoldBerry;
+import me.creeper.creepermodtest.items.food.ItemGrilledCheese;
 import me.creeper.creepermodtest.items.tools.*;
 import net.minecraft.item.Item;
 import net.minecraftforge.oredict.OreDictionary;
@@ -43,6 +46,7 @@ public class ModItems {
     public static Item itemTungstenPlate;
     public static Item itemDevNote;
     public static Item itemEntrance;
+    public static Item itemGoldBerry;
 
 
     public static void registerItems() {
@@ -72,6 +76,7 @@ public class ModItems {
         itemTungstenPlate = registerItem(new ItemTungstenPlate());
         itemDevNote = registerItem(new ItemDevNote());
         itemEntrance = registerItem(new ItemEntrance());
+        itemGoldBerry = registerItem(new ItemGoldBerry());
 
 
         itemMallirusHelmet = new MallirusArmor(MallirusArmor.MALLIRUS_ARMOR_MATERIAL, 0, 0);
