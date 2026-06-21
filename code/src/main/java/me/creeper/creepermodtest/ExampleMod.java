@@ -29,7 +29,6 @@ import me.creeper.creepermodtest.renderers.TestRenderer;
 import me.creeper.creepermodtest.screens.ModGuis;
 import me.creeper.creepermodtest.unknownFont.UnknownFontRenderer;
 import me.creeper.creepermodtest.utils.CTMArray;
-import me.creeper.creepermodtest.utils.Counter;
 import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -59,16 +58,13 @@ public class ExampleMod {
     public  static MainConfig getMainConfig() { return mainConfig; }
 
 
-    public static char         guiChar = ' ';
-    public static int          guiIndex = 0;
-    public static int          guiTimer = 0;
-    public static char[]       guiOptions = {'@', '#', '$', '&', '/', '[', '!'};
-    public static String       guiText = "Run /licenses in-game to see CTM licenses";
+    public static       char         guiChar = ' ';
+    public static       int          guiIndex = 0;
+    public static       int          guiTimer = 0;
+    public static final char[]       guiOptions = {'@', '#', '$', '&', '/', '[', '!'};
+    public static       String       guiText = "Run /licenses in-game to see CTM licenses";
     public static final String originalGuiText = "Run /licenses in-game to see CTM licenses";
 
-
-    private static final Counter globalServerCounter = new Counter();
-    private static final Counter globalClientCounter = new Counter();
 
     public static UnknownFontRenderer unknownFontRenderer;
 
@@ -202,7 +198,4 @@ public class ExampleMod {
     public static void debugLog(String msg) {
         ExampleMod.debugLog(msg, false);
     }
-
-    public static Counter getServerCounter() { return globalServerCounter; }
-    public static Counter getClientCounter() { return globalClientCounter; }
 }

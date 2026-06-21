@@ -1,6 +1,5 @@
 package me.creeper.creepermodtest.multiblocks.testMulti;
 
-import me.creeper.creepermodtest.ExampleMod;
 import me.creeper.creepermodtest.blocks.ModBlocks;
 import me.creeper.creepermodtest.multiblocks.BlockMeta;
 import me.creeper.creepermodtest.multiblocks.MultiEntry;
@@ -8,6 +7,7 @@ import me.creeper.creepermodtest.multiblocks.helpers.FacingHelper;
 import me.creeper.creepermodtest.multiblocks.helpers.RelativeCoordinateSystem;
 import me.creeper.creepermodtest.recipes.TestMultiRecipe;
 import me.creeper.creepermodtest.recipes.TestMultiRecipes;
+import me.creeper.creepermodtest.utils.Counter;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
@@ -99,7 +99,7 @@ public class TileEntityTestMultiController extends TileEntity implements IInvent
         }
 
         // server Side
-        if (ExampleMod.getServerCounter().getCount() % 100 == 0) { // 5 s
+        if (Counter.getServerCounter().getCount() % 100 == 0) { // 5 s
             checkStructure();
         }
 
