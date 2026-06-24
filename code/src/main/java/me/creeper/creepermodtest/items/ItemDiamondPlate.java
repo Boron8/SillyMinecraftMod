@@ -7,7 +7,7 @@ public class ItemDiamondPlate extends Item {
     public ItemDiamondPlate() {
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
 
-        this.setUnlocalizedName("itemDiamondPlate");
+        this.setUnlocalizedName("diamond_plate");
         this.setTextureName("minecraft:diamond");
     }
 }

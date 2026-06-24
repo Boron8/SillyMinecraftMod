@@ -18,6 +18,14 @@ public class ModItems {
         return item;
     }
 
+    public static Item registerItem(Item item, String... oreDicts) {
+        GameRegistry.registerItem(item, item.getUnlocalizedName().substring(5));
+        for (String oreDict : oreDicts) {
+            OreDictionary.registerOre(oreDict, item);
+        }
+        return item;
+    }
+
     public static Item itemTest;
     public static Item itemCheese;
     public static Item itemGrilledCheese;
@@ -47,36 +55,38 @@ public class ModItems {
     public static Item itemDevNote;
     public static Item itemEntrance;
     public static Item itemGoldBerry;
+    public static Item itemTungstenSword;
 
 
     public static void registerItems() {
         ExampleMod.debugLog("Registering items...");
 
         itemTest = registerItem(new ItemTest());
-        itemCheese = registerItem(new ItemCheese());
-        itemGrilledCheese = registerItem(new ItemGrilledCheese());
-        itemMallirusGem = registerItem(new ItemMallirusGem());
-        itemDiamondHammer = registerItem(new ItemDiamondHammer());
-        itemStoneHammer = registerItem(new ItemStoneHammer());
-        itemIronPlate = registerItem(new ItemIronPlate());
-        itemIronHammer = registerItem(new ItemIronHammer());
-        itemDiamondPlate = registerItem(new ItemDiamondPlate());
+        itemCheese = registerItem(new ItemCheese(), "listAllfood", "listAllFood", "listAllmilk", "listAllMilk", "foodCheese");
+        itemGrilledCheese = registerItem(new ItemGrilledCheese(), "listAllfood", "listAllFood", "listAllmilk", "listAllMilk", "foodGrilledCheese", "foodCheese");
+        itemMallirusGem = registerItem(new ItemMallirusGem(), "gemMallirus");
+        itemDiamondHammer = registerItem(new ItemDiamondHammer(), "toolHammer", "toolDiamondHammer");
+        itemStoneHammer = registerItem(new ItemStoneHammer(), "toolHammer", "toolStoneHammer");
+        itemIronPlate = registerItem(new ItemIronPlate(), "plateIron");
+        itemIronHammer = registerItem(new ItemIronHammer(), "toolHammer", "toolIronHammer");
+        itemDiamondPlate = registerItem(new ItemDiamondPlate(), "plate", "plateDiamond");
         itemDetonator = registerItem(new ItemDetonator());
         itemExplodingBallSummoner = registerItem(new ItemExplodingBallSummoner());
-        itemDenseCopper = registerItem(new ItemDenseCopper());
-        itemCopperIngot = registerItem(new ItemCopperIngot());
+        itemDenseCopper = registerItem(new ItemDenseCopper(), "denseCopper");
+        itemCopperIngot = registerItem(new ItemCopperIngot(), "ingot", "ingotCopper");
         itemRedstoneWire = registerItem(new ItemRedstoneWire());
         itemInsulator = registerItem(new ItemInsulator());
         itemStoneMortar = registerItem(new ItemStoneMortar());
         itemStonePestle = registerItem(new ItemStonePestle());
         itemStoneMortarAndPestle = registerItem(new ItemStoneMortarAndPestle());
-        itemCrushedGranularQuartz = registerItem(new ItemCrushedGranularQuartz());
-        itemCrushedFineQuartz = registerItem(new ItemCrushedFineQuartz());
-        itemTungstenIngot = registerItem(new ItemTungstenIngot());
-        itemTungstenPlate = registerItem(new ItemTungstenPlate());
+        itemCrushedGranularQuartz = registerItem(new ItemCrushedGranularQuartz(), "crushed", "crushedQuartz");
+        itemCrushedFineQuartz = registerItem(new ItemCrushedFineQuartz(), "crushed", "crushedQuartz");
+        itemTungstenIngot = registerItem(new ItemTungstenIngot(), "ingotTungsten");
+        itemTungstenPlate = registerItem(new ItemTungstenPlate(), "plate", "plateTungsten");
         itemDevNote = registerItem(new ItemDevNote());
-        itemEntrance = registerItem(new ItemEntrance());
-        itemGoldBerry = registerItem(new ItemGoldBerry());
+        itemEntrance = registerItem(new ItemEntrance(), "magic");
+        itemGoldBerry = registerItem(new ItemGoldBerry(), "listAllfood", "listAllFood", "listAllberry", "listAllBerry", "foodGoldBerry", "foodBerry");
+        itemTungstenSword = registerItem(new ItemTungstenSword(), "swordTungsten");
 
 
         itemMallirusHelmet = new MallirusArmor(MallirusArmor.MALLIRUS_ARMOR_MATERIAL, 0, 0);
@@ -88,26 +98,6 @@ public class ModItems {
         GameRegistry.registerItem(itemMallirusLeggings, "mallirusLeggings");
         GameRegistry.registerItem(itemMallirusBoots, "mallirusBoots");
 
-
-        OreDictionary.registerOre("listAllfood", itemCheese);   // Pams standards
-        OreDictionary.registerOre("listAllmilk", itemCheese);   // Pams standards
-        OreDictionary.registerOre("foodCheese", itemCheese);    // Pams standards
-        OreDictionary.registerOre("listAllfood", itemGrilledCheese);
-        OreDictionary.registerOre("listAllmilk", itemGrilledCheese);
-        OreDictionary.registerOre("foodGrilledCheese", itemGrilledCheese);
-        OreDictionary.registerOre("gemMallirus", itemMallirusGem);
-        OreDictionary.registerOre("toolHammer", itemDiamondHammer);
-        OreDictionary.registerOre("toolDiamondHammer", itemDiamondHammer);
-        OreDictionary.registerOre("toolHammer", itemStoneHammer);
-        OreDictionary.registerOre("toolStoneHammer", itemStoneHammer);
-        OreDictionary.registerOre("plateIron", itemIronPlate);
-        OreDictionary.registerOre("toolHammer", itemIronHammer);
-        OreDictionary.registerOre("toolIronHammer", itemIronHammer);
-        OreDictionary.registerOre("plateDiamond", itemDiamondPlate);
-        OreDictionary.registerOre("ingotCopper", itemCopperIngot);
-        OreDictionary.registerOre("denseCopper", itemDenseCopper);
-        OreDictionary.registerOre("ingotTungsten", itemTungstenIngot);
-        OreDictionary.registerOre("plateTungsten", itemTungstenPlate);
 
         ExampleMod.debugLog("Registering items done.");
     }

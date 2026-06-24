@@ -3,51 +3,59 @@
 ####################
 # Items            #
 ####################
-item.itemTest.name=Test
+item.test.name=Test
 
-item.itemCheese.name=Cheese
-item.itemGrilledCheese.name=Grilled Cheese
+item.cheese.name=Cheese
+item.grilled_cheese.name=Grilled Cheese
+item.gold_berry.name=Gold Berry
 
-item.stoneHammer.name=Stone Hammer
-item.ironHammer.name=Iron Hammer
-item.diamondHammer.name=Diamond Hammer
+item.stone_hammer.name=Stone Hammer
+item.iron_hammer.name=Iron Hammer
+item.diamond_hammer.name=Diamond Hammer
 
-item.itemIronPlate.name=Iron Plate
-item.itemDiamondPlate.name=Diamond Plate
+item.iron_plate.name=Iron Plate
+item.diamond_plate.name=Diamond Plate
+item.tungsten_plate.name=Tungsten Plate
 
-item.itemDetonator.name=Detonator
-item.itemExplodingBallSummoner.name=Exploding Ball Summoner
+item.detonator.name=Detonator
+item.exploding_ball_summoner.name=Exploding Ball Summoner
 
-item.itemMallirusGem.name=Mallirus Gem
-item.itemCopperIngot.name=Copper Ingot
-item.itemDenseCopper.name=Dense Copper
+item.mallirus_gem.name=Mallirus Gem
+item.copper_ingot.name=Copper Ingot
+item.dense_copper.name=Dense Copper
+item.tungsten_ingot.name=Tungsten Ingot
 
-item.itemCrushedFineQuartz.name=Crushed Quartz  [Fine]
-item.itemCrushedGranularQuartz.name=Crushed Quartz  [Granular]
+item.crushed_fine_quartz.name=Crushed Quartz  [Fine]
+item.crushed_granular_quartz.name=Crushed Quartz  [Granular]
 
-item.itemRedstoneWire.name=Redstone Wire
-item.itemInsulator.name=Insulator
+item.redstone_wire.name=Redstone Wire
+item.insulator.name=Insulator
 
-item.itemStoneMortar.name=Stone Mortar
-item.itemStonePestle.name=Stone Pestle
-item.itemStoneMortarAndPestle.name=Mortar & Pestle
+item.stone_mortar.name=Stone Mortar
+item.stone_pestle.name=Stone Pestle
+item.stone_mortar_and_pestle.name=Mortar & Pestle
 
-item.itemDevNote.name=Dev Note
+item.dev_note.name=Dev Note
 
-item.itemEntrance.name=526
+item.entrance.name=526
+
+item.tungsten_sword.name=Tungsten Sword
 
 
 
 ####################
 # Blocks           #
 ####################
-tile.blockTable.name=Table Block
-tile.blockMallirusOre.name=Mallirus Ore
-tile.blockBlinker.name=Blinker Block
-tile.blockCable.name=Redstone Cable
-tile.blockCopperOre.name=Copper Ore
-tile.blockTestMultiController.name=Linear Particle Accelerator (Linac) Controller
-tile.blockTestMultiCasing.name=Linear Particle Accelerator (Linac) Casing
+tile.table.name=Table Block
+tile.mallirus_ore.name=Mallirus Ore
+tile.blinker.name=Blinker Block
+tile.cable.name=Redstone Cable
+tile.copper_ore.name=Copper Ore
+tile.test_multi_controller.name=Linear Particle Accelerator (Linac) Controller
+tile.test_multi_casing.name=Linear Particle Accelerator (Linac) Casing
+tile.dense_copper_tube.name=Dense Copper Tube
+tile.tungsten_ore.name=Tungsten Ore
+tile.berry_bush.name=Berry Bush
 
 
 

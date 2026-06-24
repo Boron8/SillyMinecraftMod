@@ -8,7 +8,7 @@ public class ItemStoneMortar extends Item {
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
         this.setMaxStackSize(8);
 
-        this.setUnlocalizedName("itemStoneMortar");
+        this.setUnlocalizedName("stone_mortar");
         this.setTextureName(ExampleMod.MODID+":item_stone_mortar");
     }
 }

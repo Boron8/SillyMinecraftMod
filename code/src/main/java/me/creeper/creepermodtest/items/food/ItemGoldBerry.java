@@ -14,7 +14,7 @@ public class ItemGoldBerry extends ItemFood {
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
         this.setMaxStackSize(64);
 
-        this.setUnlocalizedName("itemGoldBerry");
+        this.setUnlocalizedName("gold_berry");
         this.setTextureName(ExampleMod.MODID+":item_gold_berry");
     }
 

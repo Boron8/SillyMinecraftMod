@@ -13,7 +13,7 @@ public class ItemExplodingBallSummoner extends Item {
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
         this.setMaxStackSize(1);
 
-        this.setUnlocalizedName("itemExplodingBallSummoner");
+        this.setUnlocalizedName("exploding_ball_summoner");
         this.setTextureName("minecraft:blaze_rod");
 
         this.setMaxDamage(3); // 4

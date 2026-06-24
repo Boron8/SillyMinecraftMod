@@ -8,7 +8,7 @@ public class ItemCrushedGranularQuartz extends Item {
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
         this.setMaxStackSize(64);
 
-        this.setUnlocalizedName("itemCrushedGranularQuartz");
+        this.setUnlocalizedName("crushed_granular_quartz");
         this.setTextureName(ExampleMod.MODID+":item_crushed_granular_quartz");
     }
 }

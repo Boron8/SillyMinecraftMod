@@ -7,7 +7,7 @@ public class ItemTungstenPlate extends Item {
     public ItemTungstenPlate() {
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
 
-        this.setUnlocalizedName("itemTungstenPlate");
+        this.setUnlocalizedName("tungsten_plate");
         this.setTextureName(ExampleMod.MODID + ":item_tungsten_plate");
     }
 }

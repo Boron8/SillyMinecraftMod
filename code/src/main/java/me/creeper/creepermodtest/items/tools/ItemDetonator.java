@@ -11,7 +11,7 @@ public class ItemDetonator extends Item {
     public ItemDetonator() {
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
         this.setMaxStackSize(1);
-        this.setUnlocalizedName("itemDetonator");
+        this.setUnlocalizedName("detonator");
         this.setTextureName("minecraft:stick");
         this.setMaxDamage(7);
     }

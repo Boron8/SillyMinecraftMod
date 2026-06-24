@@ -7,7 +7,7 @@ public class ItemDenseCopper extends Item {
     public ItemDenseCopper() {
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
 
-        this.setUnlocalizedName("itemDenseCopper");
+        this.setUnlocalizedName("dense_copper");
         this.setTextureName(ExampleMod.MODID + ":item_dense_copper");
     }
 }

@@ -8,7 +8,7 @@ public class ItemInsulator extends Item {
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
         this.setMaxStackSize(64);
 
-        this.setUnlocalizedName("itemInsulator");
+        this.setUnlocalizedName("insulator");
         this.setTextureName(ExampleMod.MODID+":item_insulator");
     }
 }

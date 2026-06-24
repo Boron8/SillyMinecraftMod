@@ -13,7 +13,7 @@ public class BlockTungstenOre extends Block {
         this.setStepSound(soundTypeStone);
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
 
-        this.setBlockName("blockTungstenOre");
+        this.setBlockName("tungsten_ore");
         this.setBlockTextureName(ExampleMod.MODID+":block_tungsten_ore");
     }
 }

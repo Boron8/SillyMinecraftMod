@@ -14,7 +14,7 @@ public class BlockTable extends Block {
         this.setStepSound(soundTypeWood);
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
 
-        this.setBlockName("blockTable");
+        this.setBlockName("table");
         this.setBlockTextureName(ExampleMod.MODID+":block_table");
     }
 

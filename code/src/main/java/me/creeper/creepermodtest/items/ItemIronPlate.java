@@ -7,7 +7,7 @@ public class ItemIronPlate extends Item {
     public ItemIronPlate() {
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
 
-        this.setUnlocalizedName("itemIronPlate");
+        this.setUnlocalizedName("iron_plate");
         this.setTextureName("minecraft:iron_ingot");
     }
 }

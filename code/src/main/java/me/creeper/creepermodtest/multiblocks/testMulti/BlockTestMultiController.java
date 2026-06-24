@@ -32,7 +32,7 @@ public class BlockTestMultiController extends BlockContainer {
         this.setStepSound(soundTypeMetal);
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
 
-        this.setBlockName("blockTestMultiController");
+        this.setBlockName("test_multi_controller");
         this.setBlockTextureName(ExampleMod.MODID+":block_test_multi_controller_side");
     }
 

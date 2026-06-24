@@ -9,7 +9,7 @@ public class ItemMallirusGem extends Item {
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
         this.setMaxStackSize(16);
 
-        this.setUnlocalizedName("itemMallirusGem");
+        this.setUnlocalizedName("mallirus_gem");
         this.setTextureName(ExampleMod.MODID+":item_mallirus_gem");
     }
 }

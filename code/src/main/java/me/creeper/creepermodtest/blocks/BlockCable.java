@@ -13,7 +13,7 @@ public class BlockCable extends Block {
         this.setStepSound(soundTypeMetal);
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
 
-        this.setBlockName("blockCable");
+        this.setBlockName("cable");
         this.setBlockTextureName(ExampleMod.MODID+":block_cable");
     }
 }

@@ -8,7 +8,7 @@ public class ItemRedstoneWire extends Item {
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
         this.setMaxStackSize(64);
 
-        this.setUnlocalizedName("itemRedstoneWire");
+        this.setUnlocalizedName("redstone_wire");
         this.setTextureName(ExampleMod.MODID+":item_redstone_wire");
     }
 }

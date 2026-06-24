@@ -13,7 +13,7 @@ public class BlockTestMultiCasing extends Block {
         this.setStepSound(soundTypeMetal);
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
 
-        this.setBlockName("blockTestMultiCasing");
+        this.setBlockName("test_multi_casing");
         this.setBlockTextureName(ExampleMod.MODID+":block_test_multi_controller_side");
     }
 

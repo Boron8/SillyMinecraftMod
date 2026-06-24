@@ -12,7 +12,7 @@ public class ItemCheese extends ItemFood {
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
         this.setMaxStackSize(32);
 
-        this.setUnlocalizedName("itemCheese");
+        this.setUnlocalizedName("cheese");
         this.setTextureName(ExampleMod.MODID+":item_cheese");
     }
 }

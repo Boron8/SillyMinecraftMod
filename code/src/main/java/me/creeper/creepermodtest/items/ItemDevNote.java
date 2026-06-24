@@ -7,7 +7,7 @@ public class ItemDevNote extends Item {
     public ItemDevNote() {
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
 
-        this.setUnlocalizedName("itemDevNote");
-        this.setTextureName("minecraft:paper");
+        this.setUnlocalizedName("dev_note");
+        this.setTextureName("minecraft:paper"); // Now that's intentional
     }
 }

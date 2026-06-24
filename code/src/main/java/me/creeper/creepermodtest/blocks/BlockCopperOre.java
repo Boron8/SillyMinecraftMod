@@ -13,7 +13,7 @@ public class BlockCopperOre extends Block {
         this.setStepSound(soundTypeStone);
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
 
-        this.setBlockName("blockCopperOre");
+        this.setBlockName("copper_ore");
         this.setBlockTextureName(ExampleMod.MODID+":block_copper_ore");
     }
 }

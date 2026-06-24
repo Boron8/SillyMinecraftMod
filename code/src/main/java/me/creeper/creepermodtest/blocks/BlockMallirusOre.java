@@ -13,7 +13,7 @@ public class BlockMallirusOre extends Block {
         this.setStepSound(soundTypeStone);
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
 
-        this.setBlockName("blockMallirusOre");
+        this.setBlockName("mallirus_ore");
         this.setBlockTextureName(ExampleMod.MODID+":block_mallirus_ore");
     }
 }

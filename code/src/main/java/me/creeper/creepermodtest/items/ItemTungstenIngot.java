@@ -7,7 +7,7 @@ public class ItemTungstenIngot extends Item {
     public ItemTungstenIngot() {
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
 
-        this.setUnlocalizedName("itemTungstenIngot");
+        this.setUnlocalizedName("tungsten_ingot");
         this.setTextureName(ExampleMod.MODID + ":item_tungsten_ingot");
     }
 }

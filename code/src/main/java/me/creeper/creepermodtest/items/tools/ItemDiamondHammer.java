@@ -30,7 +30,7 @@ public class ItemDiamondHammer extends ItemPickaxe {
         super(DIAMOND_HAMMER);
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
 
-        this.setUnlocalizedName("diamondHammer");
+        this.setUnlocalizedName("diamond_hammer");
         this.setTextureName(ExampleMod.MODID+":item_diamond_hammer");
     }
 

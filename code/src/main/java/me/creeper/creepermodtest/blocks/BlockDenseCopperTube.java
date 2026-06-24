@@ -13,7 +13,7 @@ public class BlockDenseCopperTube extends Block {
         this.setStepSound(soundTypeMetal);
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
 
-        this.setBlockName("blockDenseCopperTube");
+        this.setBlockName("dense_copper_tube");
         this.setBlockTextureName(ExampleMod.MODID+":block_dense_copper_tube");
     }
 }

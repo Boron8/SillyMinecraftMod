@@ -31,7 +31,7 @@ public class BlockBerryBush extends Block {
         this.setStepSound(soundTypeGlass);
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
 
-        this.setBlockName("blockBerryBush");
+        this.setBlockName("berry_bush");
         this.setBlockTextureName(ExampleMod.MODID+":block_berry_bush");
         this.setTickRandomly(true);
     }

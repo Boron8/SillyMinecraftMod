@@ -13,7 +13,7 @@ public class ItemEntrance extends MagicItem {
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
         this.setMaxStackSize(1);
 
-        this.setUnlocalizedName("itemEntrance");
+        this.setUnlocalizedName("entrance");
         this.setTextureName(ExampleMod.MODID+":item_entrance");
     }
 

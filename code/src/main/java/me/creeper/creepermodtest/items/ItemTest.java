@@ -11,7 +11,7 @@ public class ItemTest extends Item {
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
         this.setMaxStackSize(64);
 
-        this.setUnlocalizedName("itemTest");
+        this.setUnlocalizedName("test");
         this.setTextureName(ExampleMod.MODID+":item_test");
     }
 

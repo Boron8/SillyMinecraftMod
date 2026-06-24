@@ -11,7 +11,7 @@ public class ItemStoneMortarAndPestle extends Item {
         this.setMaxStackSize(1);
         this.setMaxDamage(127);
 
-        this.setUnlocalizedName("itemStoneMortarAndPestle");
+        this.setUnlocalizedName("stone_mortar_and_pestle");
         this.setTextureName(ExampleMod.MODID+":item_stone_mortar_and_pestle");
     }
 

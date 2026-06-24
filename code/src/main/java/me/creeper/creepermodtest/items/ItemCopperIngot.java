@@ -7,7 +7,7 @@ public class ItemCopperIngot extends Item {
     public ItemCopperIngot() {
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
 
-        this.setUnlocalizedName("itemCopperIngot");
+        this.setUnlocalizedName("copper_ingot");
         this.setTextureName(ExampleMod.MODID + ":item_copper_ingot");
     }
 }

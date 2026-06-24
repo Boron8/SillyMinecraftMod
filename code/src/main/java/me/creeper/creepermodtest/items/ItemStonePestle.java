@@ -8,7 +8,7 @@ public class ItemStonePestle extends Item {
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
         this.setMaxStackSize(4);
 
-        this.setUnlocalizedName("itemStonePestle");
+        this.setUnlocalizedName("stone_pestle");
         this.setTextureName(ExampleMod.MODID+":item_stone_pestle");
     }
 }

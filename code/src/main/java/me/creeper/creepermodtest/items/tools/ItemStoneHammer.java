@@ -13,7 +13,7 @@ public class ItemStoneHammer extends Item {
 
         this.setCreativeTab(ExampleMod.tabCreepermodtest);
 
-        this.setUnlocalizedName("stoneHammer");
+        this.setUnlocalizedName("stone_hammer");
         this.setTextureName(ExampleMod.MODID+":item_stone_hammer");
     }
 
