@@ -2,6 +2,8 @@ package me.creeper.creepermodtest.items.tools;
 
 import me.creeper.creepermodtest.ExampleMod;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.nbt.NBTTagCompound;
@@ -31,22 +33,32 @@ public class ItemTungstenSword extends ItemSword {
 
     @Override
     public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker) {
-        NBTTagCompound root = stack.getTagCompound();
-        if (root != null && root.hasKey("ctm")) {
-            NBTTagCompound ctm = root.getCompoundTag("ctm");
+        if (!attacker.worldObj.isRemote && attacker instanceof EntityPlayerMP) {
+            EntityPlayerMP attackerPlayer = (EntityPlayerMP)attacker;
 
-            if (ctm != null) {
-                if (ctm.getBoolean("lifesteal")) {
-                    if (ExampleMod.random.nextFloat() < 0.25F) { // 25%
-                        attacker.heal(1.0F);
+            NBTTagCompound root = stack.getTagCompound();
+            if (root != null && root.hasKey("ctm")) {
+                NBTTagCompound ctm = root.getCompoundTag("ctm");
+
+                if (ctm != null) {
+                    if (ctm.getBoolean("lifesteal")) {
+                        if (ExampleMod.random.nextFloat() < 0.25F) { // 25%
+                            attacker.heal(1.0F);
+                        }
                     }
-                }
-                if (ctm.getBoolean("nightlight")) {
-                    attacker.addPotionEffect(new PotionEffect(
-                            Potion.nightVision.id,
-                            10*20,
-                            0
-                    ));
+                    byte nightlight = ctm.getByte("nightlight");
+                    if (nightlight > 0) {
+                        attacker.addPotionEffect(new PotionEffect(
+                                Potion.nightVision.id,
+                                nightlight * 20,
+                                0
+                        ));
+                    }
+                    if (ctm.getBoolean("redstone")) {
+                        if (ExampleMod.random.nextFloat() < 0.33F) { // 33%
+                            attackerPlayer.inventory.addItemStackToInventory(new ItemStack(Items.redstone));
+                        }
+                    }
                 }
             }
         }
