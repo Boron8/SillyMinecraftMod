@@ -43,5 +43,7 @@ Prio: 1-10
 | Linac last layer    | No  |  2   | Fix linac last layer not required       |
 | Fix HTTP lib        | No  |  2   | Make HTTP lib better                    |
 | D.Hammer Per-Player | No  |  3   | Per-Player isBreaking in D.Hammer?      |
+| Tut separated files | No  |  3   | Move tutorial pages into diff files     |
+| Tut not player      | No  |  3   | Run /tutorial without being a Player    |
 
 
