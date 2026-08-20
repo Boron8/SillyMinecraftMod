@@ -18,9 +18,9 @@ public class RandLib {
                 sandbox.applyDelay();
 
                 Random internalRandom = new Random();
-                LuaTable obj = new LuaTable();
+                LuaTable thisRandom = new LuaTable();
 
-                obj.set("next", new ZeroArgFunction() {
+                thisRandom.set("next", new ZeroArgFunction() {
                     @Override
                     public LuaValue call() {
                         sandbox.applyDelay();
@@ -31,7 +31,7 @@ public class RandLib {
                     }
                 });
 
-                obj.set("nextInt", new OneArgFunction() {
+                thisRandom.set("nextInt", new OneArgFunction() {
                     @Override
                     public LuaValue call(LuaValue arg1) {
                         sandbox.applyDelay();
@@ -45,7 +45,7 @@ public class RandLib {
                     }
                 });
 
-                obj.set("nextBool", new ZeroArgFunction() {
+                thisRandom.set("nextBool", new ZeroArgFunction() {
                     @Override
                     public LuaValue call() {
                         sandbox.applyDelay();
@@ -56,7 +56,7 @@ public class RandLib {
                     }
                 });
 
-                obj.set("seed", new OneArgFunction() {
+                thisRandom.set("seed", new OneArgFunction() {
                     @Override
                     public LuaValue call(LuaValue arg1) {
                         sandbox.applyDelay();
@@ -67,7 +67,7 @@ public class RandLib {
                     }
                 });
 
-                return obj;
+                return thisRandom;
             }
         });
 

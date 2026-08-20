@@ -7,6 +7,8 @@ import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.ThreeArgFunction;
 import org.luaj.vm2.lib.TwoArgFunction;
 
+import java.nio.charset.StandardCharsets;
+
 public class StringLib {
     public static LuaTable create(LuaSandbox sandbox) {
         LuaTable string = new LuaTable();
@@ -26,7 +28,7 @@ public class StringLib {
 
                 String x = arg1.checkjstring();
 
-                return LuaValue.valueOf(x.length());
+                return LuaValue.valueOf(x.getBytes(StandardCharsets.UTF_8).length);
             }
         });
         string.set("upper", new OneArgFunction() {
@@ -63,7 +65,7 @@ public class StringLib {
                 return LuaValue.valueOf(new_);
             }
         });
-        string.set("replace", new TwoArgFunction() {
+        string.set("concat", new TwoArgFunction() {
             @Override
             public LuaValue call(LuaValue arg1, LuaValue arg2) {
                 sandbox.applyDelay();
@@ -89,7 +91,7 @@ public class StringLib {
                 sandbox.applyDelay();
 
                 return LuaValue.valueOf(
-                        arg1.checkjstring().startsWith( arg2.checkjstring() )
+                        arg1.checkjstring().endsWith( arg2.checkjstring() )
                 );
             }
         });

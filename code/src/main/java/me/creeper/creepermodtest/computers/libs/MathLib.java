@@ -112,7 +112,7 @@ public class MathLib {
                 sandbox.applyDelay();
 
                 double x = arg1.checkdouble();
-                int y = arg1.checkint();
+                int y = arg2.checkint();
 
                 double out = Math.round(x * Math.pow(10, y)) / Math.pow(10, y);
 

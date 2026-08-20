@@ -45,5 +45,8 @@ Prio: 1-10
 | D.Hammer Per-Player | No  |  3   | Per-Player isBreaking in D.Hammer?      |
 | Tut separated files | No  |  3   | Move tutorial pages into diff files     |
 | Tut not player      | No  |  3   | Run /tutorial without being a Player    |
+| Config default      | No  |  5   | Better default values for config        |
+| Lua better error    | No  |  5   | Better return values for errors in lua  |
+| Sep config hashing  | No  |  4   | Different configs for different hashes  |
 
 

@@ -10,6 +10,7 @@ public class MainConfig extends BaseConfig {
     public int     computers_execution_delay = 50;
     public int     computers_base64_decode_max_bytes = 4096;
     public int     computers_base64_encode_max_bytes = 4096;
+    public int     computers_hashing_max_bytes = 8192;
 
     public boolean dev_command = false;
 
@@ -26,6 +27,7 @@ public class MainConfig extends BaseConfig {
         computers_execution_delay = this.configuration.getInt("computers_execution_delay", "computers", 50, 0, 1000, "Allow computers to work");
         computers_base64_decode_max_bytes = this.configuration.getInt("computers_base64_decode_max_bytes", "computers", 4096, 0, Integer.MAX_VALUE, "Max bytes that can be decoded from base64 at a time. In input bytes.");
         computers_base64_decode_max_bytes = this.configuration.getInt("computers_base64_encode_max_bytes", "computers", 4096, 0, Integer.MAX_VALUE, "Max bytes that can be encoded from base64 at a time. In input bytes.");
+        computers_hashing_max_bytes = this.configuration.getInt("computers_hashing_max_bytes", "computers", 8192, 0, Integer.MAX_VALUE, "Max bytes that can be hashed with SHA256/MD5/SHA1 in one operation. In input bytes.");
 
         dev_command               = this.configuration.getBoolean("dev_command", "commands", false, "Enables the debug command");
     }

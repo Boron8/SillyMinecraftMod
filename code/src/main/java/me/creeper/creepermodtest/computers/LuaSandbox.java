@@ -21,7 +21,7 @@ public class LuaSandbox {
     protected LuaTable timeLib;
     protected LuaTable stringLib;
     protected LuaTable randLib;
-    protected LuaTable base64Lib;
+    protected LuaTable cryptoLib;
 
     private final List<Consumer<String>> outputListeners = new CopyOnWriteArrayList<>();
 
@@ -68,8 +68,8 @@ public class LuaSandbox {
         randLib = RandLib.create(this);
         modules.set("rand", randLib);
 
-        //base64Lib = Base64Lib.create(this);
-        //modules.set("base64", randLib);
+        cryptoLib = CryptoLib.create(this);
+        modules.set("crypto", cryptoLib);
 
 
         globals.set("require", new OneArgFunction() {
@@ -114,6 +114,7 @@ public class LuaSandbox {
                 LuaValue.valueOf("c"),
                 LuaValue.valueOf(1)    // every '1' instruction[s]
         );
+        globals.debuglib = null;
         globals.set("debug", LuaValue.NIL);
     }
 
