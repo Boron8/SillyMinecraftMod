@@ -2,6 +2,7 @@ package me.creeper.creepermodtest.blocks;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import me.creeper.creepermodtest.ExampleMod;
+import me.creeper.creepermodtest.blocks.tileEntities.TETestPortal;
 import net.minecraft.block.Block;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -20,6 +21,7 @@ public class ModBlocks {
     public static Block blockDenseCopperTube;
     public static Block blockTungstenOre;
     public static Block blockBerryBush;
+    public static Block blockTestPortal;
 
     public static void registerAllBlocks() {
         ExampleMod.debugLog("Registering blocks...");
@@ -32,6 +34,7 @@ public class ModBlocks {
         blockDenseCopperTube = registerBlock(new BlockDenseCopperTube());
         blockTungstenOre = registerBlock(new BlockTungstenOre());
         blockBerryBush = registerBlock(new BlockBerryBush());
+        blockTestPortal = registerBlock(new BlockTestPortal());
 
         OreDictionary.registerOre("oreMallirus", blockMallirusOre);
         OreDictionary.registerOre("oreCopper", blockCopperOre);
@@ -40,7 +43,17 @@ public class ModBlocks {
         OreDictionary.registerOre("plantBerryBush", blockBerryBush);
         OreDictionary.registerOre("bushBerry", blockBerryBush);
         OreDictionary.registerOre("bush", blockBerryBush);
+        OreDictionary.registerOre("portal", blockTestPortal);
 
         ExampleMod.debugLog("Registering blocks done.");
+    }
+
+
+    public static void registerAllTileEntities() {
+        ExampleMod.debugLog("Registering tile entities...");
+
+        GameRegistry.registerTileEntity( TETestPortal.class, "TestPortal" );
+
+        ExampleMod.debugLog("Registering tile entities done.");
     }
 }

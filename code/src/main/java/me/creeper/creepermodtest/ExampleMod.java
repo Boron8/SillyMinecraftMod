@@ -1,5 +1,6 @@
 package me.creeper.creepermodtest;
 
+import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
@@ -11,6 +12,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import me.creeper.creepermodtest.blocks.ModBlocks;
+import me.creeper.creepermodtest.blocks.tileEntities.TETestPortal;
 import me.creeper.creepermodtest.commands.RegisterCommands;
 import me.creeper.creepermodtest.computers.LuaSandbox;
 import me.creeper.creepermodtest.computers.chat.ChatHandler;
@@ -25,6 +27,7 @@ import me.creeper.creepermodtest.multiblocks.registerMultiblocks;
 import me.creeper.creepermodtest.other.ChestGens;
 import me.creeper.creepermodtest.packets.PacketHandler;
 import me.creeper.creepermodtest.recipes.RegisterRecipes;
+import me.creeper.creepermodtest.renderers.RenderTestPortal;
 import me.creeper.creepermodtest.renderers.TestRenderer;
 import me.creeper.creepermodtest.screens.ModGuis;
 import me.creeper.creepermodtest.unknownFont.UnknownFontRenderer;
@@ -101,6 +104,7 @@ public class ExampleMod {
 
         ModItems.registerItems();
         ModBlocks.registerAllBlocks();
+        ModBlocks.registerAllTileEntities();
 
         registerMultiblocks.registerAllMultiBlocks();
 
@@ -130,7 +134,9 @@ public class ExampleMod {
         RegisterOreGeneration.RegisterOreGenerationHandler.registerAllGeneration();
 
         // Forge Events
-        if (event.getSide().isClient()) { MinecraftForge.EVENT_BUS.register(new TestRenderer()); }
+        if (event.getSide().isClient()) {
+            MinecraftForge.EVENT_BUS.register(new TestRenderer());
+        }
         MinecraftForge.EVENT_BUS.register(new CounterHandler());
 
         if (event.getSide().isClient()) {
@@ -143,6 +149,12 @@ public class ExampleMod {
 
             // Client Commands
             registerAllCommandsClient();
+
+            // TE renderers
+            ClientRegistry.bindTileEntitySpecialRenderer(
+                    TETestPortal.class,
+                    new RenderTestPortal()
+            );
         } else {
             // Handlers (Server)
         }
